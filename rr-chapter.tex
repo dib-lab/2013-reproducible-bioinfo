@@ -220,10 +220,10 @@ stand ready on the computational benchtop.
 \subsubsection{Unix/Linux operating system}
 
 Most biologists are aware of the two primary computing platforms available:
-Windows and Unix/Linux (*nix) systems. In the United States, most people
+Windows and Unix system (Linux and Mac OSX) systems. In the United States, most people
 learn basic computer skills exclusively on Windows machines.  
 However, developers of bioinformatics
-software primarily *nix systems because the *nix
+software primarily Unix systems because the Unix
 systems are open-source, which means anyone can freely use, modify, and
 redistribute resources under open-source licenses.  The open-source or 
 free-software community has long attracted programmers and other 
@@ -235,15 +235,15 @@ The Free Software Foundation\cite{FSF} has numerous
 open-source collections of development
 tools, libraries, licenses, and applications for the GNU/Linux system.
 Consequently, biologists can get an operating system and all the bioinformatics
-tools they need for free.  Further, *nix systems are commonly used when 
+tools they need for free.  Further, Unix systems are commonly used when 
 running on remote machines, whether the machine is a desktop computer 
 in another room, an institution's high performance compute cluster, or 
 the Cloud.
 
-Making the switch from Windows to *nix
+Making the switch from Windows to Unix
 is useful because the power available at the command line outstrips that
 of a graphical user interface (GUI); as an analogy, Windows is similar to a lab
-that relies exclusively on commercial kits whereas the command line on *nix
+that relies exclusively on commercial kits whereas the command line on Unix
 systems is like a lab that is equipped with chemicals and apparati that can be used 
 to supplement the kits or develop novel techniques.  Also, many
 GUI-based software packages require biologists to manually click through an analysis
@@ -258,7 +258,7 @@ difficult to fund; biologists will need
 basic command line navigation skills to use the latest software.  Biologists
 who use Windows but wish to take advantage of this cache of software and tools
 can download and install a free program such as Cygwin (or MSYS+Mingw32 or 
-Microsoft Interix) to emulate a *nix system
+Microsoft Interix) to emulate a Unix system
 on their Windows machine; therefore, they can still use Windows for everything
 else. Note: modern Macintosh machines are a
 good compromise for modern research labs because they have a GUI for casual use
@@ -271,7 +271,7 @@ Just as wet-lab biologists learn to use simple tools like pipets, centrifuges,
 incubators, and gel boxes individually and then put them together to perform a
 specific procedure, so bioinformaticians use simple Unix tools
 that each perform a specific task and string them together into a pipeline.
-Many Unix tools come pre-installed in *nix systems or are freely
+Many Unix tools come pre-installed in Unix systems or are freely
 available online. These tools are invaluable for the beginning
 bioinformatician, particularly if that researcher has no programming experience, 
 because they will perform tasks with speed, options, and
@@ -282,7 +282,7 @@ introduce some of the most basic, useful Unix tools for bioinformatics.
 
 Shell is a language as well as interpreter that reads and interprets commands
 from a user. Any biologist who has opened a terminal or command line interface
-and typed a command has used shell. There are several shells available for *nix
+and typed a command has used shell. There are several shells available for Unix
 system, but Bourne-again Shell or Bash is predominant. 
 Bioinformaticians often use shell commands to
 run tools and automate tasks such as backing up
@@ -295,7 +295,7 @@ searching for specific data in a group of files, or sifting through a large log
 file and printing only the data relevant to a given project; they write programs to perform 
 more complex tasks.  Detailed below are
 some of the most general and useful tools on
-*nix systems.
+Unix systems.
 
 \paragraph{Grep, Sed, Cut, and Awk}
 
@@ -325,7 +325,8 @@ knowing the program's name. For example, if a biologist wanted to archive files,
 he/she might use the \emph{apropos} command to search for an appropriate tool:\\* \\*
 \texttt{\$ apropos archive}\\*
 
-Note: \$ indicates the command prompt or where the user would begin typing.  The user would not actually type the \$.
+Note: \$ indicates the command prompt or where the user would begin typing.
+The user would not actually type the \$.
 
 The output will vary depending on system, but should look like:\\* \\*
 \texttt{jar(1)    - Java archive tool}\\*
@@ -358,8 +359,11 @@ the standard manual for the tar program.\\* \\*
 implementation can extract from tar, pax, cpio, zip, jar, ar, and ISO 9660
 cdrom images and can create tar, pax, cpio, ar, and shar archives\ldots}\\*
 
-Note: biologists can also do a simple keyword
-search in Wikipedia to find similar information, examples, and options.
+Note: Apropos and man commands serve as a reference, not a tutorial on how to use
+a particular command. Biologists may need to search in Google,
+Wikipedia and other resources to find tutorials, examples, and other informations.
+\texttt{software-carpentry.org} website is a good place to start with for a tutorial
+for many Unix commands.
 
 \paragraph{History and Script}
 
@@ -460,22 +464,25 @@ automating the procedure speeds up the parameter optimization process.
 Text editors are 
 similar to word processors in that they are used to open,
 create/modify, and save text files and source code, but different because they
-do not save formatting characters or binary information in the file.  Therefore, they produce 
-the clean, simple files that are needed for running programs
+do not save formatting characters or binary information in the file.
+Therefore, they produce the clean, simple files that are needed for running programs
 and analyzing data.  There are many freely available editors with features such
 as GUIs, programming language-specific syntax
 highlighting, and advanced text parsing commands. 
 We recommend that biologists learn cross-platform editors
-(i.e.\ can be used on Windows, *nix systems, etc.), particularly
-those biologists who use Windows machines locally and *nix systems
+(i.e.\ can be used on Windows, Unix systems, etc.), particularly
+those biologists who use Windows machines locally and Unix systems
 remotely.
 
 Two editors are particularly popular among scientists: Emacs and Vi (or Vim).
-Both editors are cross-platform and 
-are designed to increase the productivity of biologists/bioinformaticians.  
-Both editors also
-have active communities that develop plugins and provide free support
-for new users. 
+Both editors are cross-platform and have features that help increase the productivity
+such as macros that can record and perform a task repeatedly, a regular expression
+for search/replace and etc.
+Emacs and Vi can also be programmed to function in a particular way with
+a scripting language such as Emacs Lisp or Vim script.
+This feature makes these two editors highly expandable and flexible.
+Numerous free plugins for both editors are developed and maintained by a
+large user-based community, which also provides free support for new users.
 
 Integrated development environments (IDEs) provide tool sets
 including an editor, usually with advanced features, debugger, package manager,
@@ -495,7 +502,7 @@ developing error-free and efficient code, document programs for self and
 general use, implement a version control system as an electronic notebook
 and distribution method, and develop controls for testing homegrown code.  These
 sections are each intended as an overview of the tools and practices for
-writing scripts that are shorter than 50 lines of code.  References and
+writing scripts that are shorter than a page or two in length.  References and
 tutorials for learning the languages and tools are included at the end of the
 chapter. 
 
@@ -513,12 +520,29 @@ essential for computational lab safety.
 
 \subsection{Programming languages}
 
-Programming languages are used to communicate 
-human-devised instructions to computers. 
-Of the available languages, 
-biologists with no programming experience should choose Python or Perl,
-both of which are already used for bioinformatics and therefore have
-reference materials and high-quality third-party libraries. 
+A programming langauge is a set of instructions that can be translated into
+a machine code that instructs a computer to perform a task.
+They are generally categorized as \emph{interpreted} and \emph{compiled}.
+Interpreted (scripting) languages (such as Python, Perl, and Ruby) use an
+interpreter program to translate human-readable
+code to machine code at run time (when the user is executing the
+program). Compiled languages (such as C, C++, and Java)
+use a compiler program for translation that is run 
+during code development, producing an executable file that
+contains only machine code. Both types of languages are widely used in
+bioinformatics. While compiled languages are generally more difficult to learn
+and time-consuming to use than their counterparts, the 
+programs usually run faster because the code is translated in advance,
+making compiled languages suited for processing large
+datasets or performing complex calculations. Interpreted languages are
+easier to learn and use, especially for beginners, and for processing 
+small datasets or relatively simple
+tasks, the difference in speed is negligible. 
+
+Biologists with no programming experience should consider using an interpreted
+language that is widely used such as Python or Perl.
+Both languages have a large user-based community, reference materials and
+high-quality third-party libraries.
 While academia in particular has a culture of 
 developing tools from scratch even when alternatives are available, this practice
 is outdated because pipelines are too complex for a single
@@ -539,22 +563,6 @@ by a community of programmers and scientists; therefore, they are well-tested
 and fairly reliable. Many libraries also provide intensive tutorials, online
 webboards, listserves, etc.\ to support users. 
 
-Programming languages are categorized as
-\emph{interpreted} and \emph{compiled}. Interpreted (scripting) languages (such
-as Python, Perl, and Ruby) use an interpreter program to translate human-readable
-code to machine code at run time (when the user is executing the
-program). Compiled languages (such as C, C++, and Java)
-use a compiler program for translation that is run 
-during code development, producing an executable file that
-contains only machine code. Both types of languages are widely used in
-bioinformatics. While compiled languages are generally more difficult to learn
-and time-consuming to use than their counterparts, the 
-programs usually run faster because the code is translated in advance,
-making compiled languages suited for processing large
-datasets or performing complex calculations. Interpreted languages are
-easier to learn and use, especially for beginners, and for processing 
-small datasets or relatively simple
-tasks, the difference in speed is negligible. 
 
 \subsection{Good programming practices}
 
@@ -736,7 +744,7 @@ function:\\* \\*
 
 \texttt{assert count\_gc("ATGTC") == 2}\\*
 \texttt{assert count\_gc("ATTTTA") == 0}\\*
-\texttt{assert count\_gc("") == ValueError}\\*
+\texttt{assert count\_gc("") == None}\\*
 
 The first line tests whether the \emph{count\_gc} function correctly counts the number
 of G's and C's in the normal case or a mix of all four nucleotides.  The second
@@ -745,14 +753,15 @@ no G's or C's present, which is also expected to be a common case.  It is good
 programming practice to always test cases where zero is the expected result to
 ensure that it is correctly calculated and reported.  The third line tests if
 the function recognizes that it has been passed an empty sequence and correctly
-reports an error; \emph{ValueError} is a standard exception error in Python. In
+reports an error; \emph{None} is a defined value in Python. In
 Python, a programmer can also specify an error message if an assert statement
 fails:\\* \\*
-\texttt{assert count\_gc("") == ValueError, "Empty sequence, must return ValueError"}\\*
+\texttt{assert count\_gc("") == None, "Empty sequence, must return ValueError"}\\*
 
-In this case, if the function does not return ValueError, the assert statement
+In this case, if the function does not return \emph{None}, the assert statement
 fails and prints "Empty sequence, must return ValueError" on the computer
-screen.  This error message alerts the programmer that the \emph{count\_gc} function
+screen.
+This error message alerts the programmer that the \emph{count\_gc} function
 is not handling the case correctly.  
 
 Theoretically, assert statements should check all possible input
@@ -783,9 +792,9 @@ not match. The doctest for the previous function would look like this:\\*\\*
 \texttt{>>>count\_gc("ATTTTA") \\0}\\*
 \texttt{>>>count\_gc("")\\ValueError}\\*
 
+\end{itemize}
 
-Effective testing
-catches errors. However, the human programmer will
+Effective testing catches errors. However, the human programmer will
 rarely consider and write tests for all possible ways of breaking code when
 he/she is developing the first version of a program; bugs are inevitable.
 Therefore, writing tests should be incremental; each newly discovered bug
@@ -802,8 +811,6 @@ programmers who write tests
 spend less time debugging and produce higher quality code.
 Moreover, time spent repeating an analysis because of a bug is usually far
 costlier than time spent writing tests.
-
-\end{itemize}
 
 For many biologists, the guidelines introduced in the Beginner and Intermediate
 sections are sufficient to build a strong foundation for reproducible
@@ -1128,7 +1135,7 @@ thrown by the interpreter or the compiler, a bug that is not caught by the
 interpreter or the compiler (logical error) will not be detected.
 The debugger allows programmers to interact with their program such as
 running, pausing, stepping in and out of functions or loops, changing values
-in variables during execution and etc.
+in variables during execution and etc to locate the bug.
 Most programming languages have at least one debugger.
 GDB is standard debugger on GNU/Linux that can debug a program written in many
 languages including C and C++.
