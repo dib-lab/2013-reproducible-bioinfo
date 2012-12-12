@@ -1049,11 +1049,11 @@ for everything else.
 
 The IPython notebook is built on top of IPython, an advanced Python shell for
 interactive Python programming, but can support many more programming
-languages.  Also, R commands can be run from within IPython notebook. 
-Users can therefore perform statistical
-analyses and make final graphs as part of the notebook pipeline.  Finally, the
-notebook supports scientific computing packages and practices.  Shown below is
-an example of boosting productivity by using a shortcut:\\*\\*
+languages.  Also, R commands can be run from within IPython notebook using
+rmagic plugin. 
+Users can therefore use R libraries and save commands and plots in IPython.
+Finally, the notebook supports scientific computing packages and practices. 
+Shown below is an example of boosting productivity by using a shortcut:\\*\\*
 
 \texttt{>>> expression\_values =!cut -f 2 expression.dat \emph{\# read in a
 value from the second column of a text file}}\\*
@@ -1122,11 +1122,18 @@ zero-configuration.
 
 \subsubsection{Debugger}
 
-Debugger is a tool to  find bugs in large programs.  
-Most
-programming languages have at least one debugger (GDB is standard on GNU/Linux). 
-Moreover, major IDEs such as Eclipse and Netbeans have built-in
-debuggers with GUIs. 
+Code usually contains errors or bugs that cause unexpected results.
+Even though programmers can sometimes guess where the error is from an error message
+thrown by the interpreter or the compiler, a bug that is not caught by the
+interpreter or the compiler (logical error) will not be detected.
+The debugger allows programmers to interact with their program such as
+running, pausing, stepping in and out of functions or loops, changing values
+in variables during execution and etc.
+Most programming languages have at least one debugger.
+GDB is standard debugger on GNU/Linux that can debug a program written in many
+languages including C and C++.
+Moreover, major IDEs such as Eclipse and Netbeans have built-in debuggers
+with GUIs. 
 
 \subsubsection{Unit tests and automated testing}
 
