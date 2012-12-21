@@ -221,7 +221,7 @@ stand ready on the computational benchtop.
 Most biologists are aware of the two primary computing platforms available:
 Windows and Unix systems (which include Linux and Mac OSX). 
 In the United States, most people
-learn basic computer skills exclusively on Windows machines.  
+learn basic computer skills on Windows machines.  
 However, developers of bioinformatics
 software primarily Unix systems because the Unix
 systems are open-source, which means anyone can freely use, modify, and
@@ -245,7 +245,7 @@ Making the switch from Windows to Unix
 is useful because the power available at the command line outstrips that
 of a graphical user interface (GUI); as an analogy, Windows is similar to a lab
 that relies exclusively on commercial kits whereas the command line on Unix
-systems is like a lab that is equipped with chemicals and apparati that can be used 
+systems is like a lab that is equipped with chemicals and instruments that can be used 
 to supplement the kits or develop novel techniques.  Also, many
 GUI-based software packages require biologists to manually click through an analysis
 while the command line can be used to write complete instructions for an
@@ -263,9 +263,8 @@ Microsoft Interix) to emulate a Unix system
 on their Windows machine or can use PowerShell; 
 therefore, they can still use Windows for everything
 else. Note: modern Macintosh machines are a
-good compromise for modern research labs because they have a GUI for casual use
-and the Terminal program provides a command line interface with many useful
-tools pre-installed.
+good compromise for modern research labs because they 
+have a Unix-based system with a friendly GUI for casual use.
 
 \subsubsection{Unix tools -- the new benchtop tools}
 
@@ -314,7 +313,7 @@ those lines or columns that are needed for a given application.
 Each tool is useful when the user needs to
 perform a single task quickly, create a simple pipeline to accomplish a
 combination of simple tasks, or process files that are too large to open in a
-spreadsheet program.  \emph{grep, sed, cut,} and \emph{awk} understand regular expression
+spreadsheet program.  \emph{grep, sed,} and \emph{awk} understand regular expression
 syntax (covered in the Related section), which offers more robust pattern searching options.  
 
 \paragraph{Apropos and Man}
@@ -363,8 +362,8 @@ cdrom images and can create tar, pax, cpio, ar, and shar archives\ldots}\\*
 
 Note: Apropos and man commands serve as a reference, not a tutorial on how to use
 a particular command. Biologists may need to search in Google,
-Wikipedia, and other resources to find tutorials, examples, and other information.
-\texttt{software-carpentry.org} is one of many websites hosting Unix tutorials.
+Wikipedia, and other resources (such as \texttt{software-carpentry.org}) 
+to find tutorials, examples, and other information.
 
 \paragraph{History and Script}
 
@@ -396,11 +395,11 @@ Example of saving shell commands in a bound or electronic notebook:\\* \\*
 \texttt{bowtie -m 1 DataSet001.Index DataSet001Reads.fq DataSet001.map }\\*
 
 In the example, the biologist is using software that aligns short RNA-Seq reads
-to a reference transcriptome.  To use the software, two commands are required,
-1) call the program bowtie-build to read the reference file
+to a reference transcriptome.  To use the software, two commands are required:
+(1) call the program bowtie-build to read the reference file
 \emph{DataSet001.fa} and
 return the output files with the prefix \emph{DataSet001.Index},
-and 2) call the program bowtie with the parameter \texttt{-m 1} using the files from the
+and (2) call the program bowtie with the parameter \texttt{-m 1} using the files from the
 previous step and the read file \emph{DataSet001Reads.fq} as input and name the
 resulting alignment file \emph{DataSet001.map}.  By recording these commands exactly
 as typed in a notebook, the biologist will know the procedure used to generate
@@ -419,10 +418,10 @@ used and referred to in later analyses.
 
 Example bash script \emph{alignMyRnaSeqData.sh}\\* \\*
 \texttt{\#! /bin/bash}\\*
-\texttt{dataName='DataSet001'}\\*
-\texttt{params='-m 1'}\\*
-\texttt{bowtie-build \$dataName'.fa' \$dataName'.Index'}\\*
-\texttt{bowtie \$params \$dataName'.Index' \$dataName'Reads.fq' \$dataName'.map' }\\*
+\texttt{dataName=`DataSet001'}\\*
+\texttt{params=`-m 1'}\\*
+\texttt{bowtie-build \$dataName`.fa' \$dataName`.Index'}\\*
+\texttt{bowtie \$params \$dataName`.Index' \$dataName`Reads.fq' \$dataName`.map' }\\*
 
 In the example bash script, the biologist has converted the
 previous example procedure into a series of commands with the name of the
@@ -807,7 +806,7 @@ he/she is developing the first version of a program; bugs are inevitable.
 Therefore, writing tests should be incremental; each newly discovered bug
 should prompt the addition of a new test.
 
-Tests are useful on many levels, some programmers still do not
+Tests are useful on many levels, but some programmers still do not
 write tests.  One reason is that test writing is not formally taught in most
 undergraduate computer science courses and therefore many programmers, let
 alone biologists, lack the required knowledge or experience.  Another reason is
@@ -1004,6 +1003,15 @@ the entire program.  The bottlenecks can be found using a tool called a profiler
 which reports the time and the number of times a particular
 function or a method is called.
 
+Note: some common bottlenecks in bioinformatics programs involve 
+loading data multiple times, unnecessary reading/writing data to disk, 
+and inefficient searching using nested loops and can be opened 
+by using more efficient algorithms or data structures.  
+Novice programmers are prone to writing algorithms that 
+mimic how a human would perform a task instead of 
+harnessing the abilities of the computer 
+and the specific programming language.
+
 Optimization depends on the
 languages being used. For a bioinformatics program written in Perl or Python, a
 bottleneck function can be rewritten in a compiled language like C++ or
@@ -1065,7 +1073,8 @@ The IPython notebook is built on top of IPython, an advanced Python shell for
 interactive Python programming, but can support many more programming
 languages.  Also, R commands can be run from within IPython notebook using
 rmagic plugin. 
-Users can therefore use R libraries and save commands and plots in IPython.
+Users can therefore use R libraries and save commands in IPython.
+Matplotlib can be used to make graphs in the notebook.  
 Finally, the notebook supports scientific computing packages and practices. 
 Shown below is an example of boosting productivity by using a shortcut:\\*\\*
 
@@ -1110,16 +1119,14 @@ that can facilitate accurate, efficient computational research.
 
 %\subsubsection{Text editor macros}
 
-
-
 \subsubsection{Regular expressions}
 
 Regular expressions are tools for
 searching text for a particular pattern of letters/numbers/symbols.  For
-example, a bioinformatician can search for DNA sequence motifs in sequence 
-alignment.  Regular expressions have their own
+example, a bioinformatician can search for short DNA sequence motifs in 
+a data file with an unstructured or unusual format.  Regular expressions have their own
 syntax for defining a specific pattern, which to the casual eye can look like
-an unintuitive shell language. For example, \texttt{logy\$} defines a pattern for a word
+an unintuitive shell language. For example, \texttt{logy\textbackslash{}b} defines a pattern for a word
 that ends with \emph{logy}, matching biology, physiology, technology, etc.
 In programming, regular expressions are
 used to write concise code and improve speed. 
@@ -1130,7 +1137,7 @@ Code usually contains errors or bugs that cause unexpected results.
 Even though programmers can sometimes guess where the error is from an error message
 thrown by the interpreter or the compiler, a bug that is not caught by the
 interpreter or the compiler (logical error) will not be detected.
-The debugger allows programmers to interact with their program such as
+The debugger tool allows programmers to interact with their program such as
 running, pausing, stepping in and out of functions or loops, changing values
 in variables during execution and etc to locate the bug.
 Most programming languages have at least one debugger.
