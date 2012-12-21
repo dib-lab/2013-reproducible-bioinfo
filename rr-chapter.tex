@@ -25,10 +25,7 @@ Microbiology \& Molecular Genetics, Michigan State University, East Lansing, MI}
 \subsection{Computational analysis in pre-genomic era}
 
 The birth of computational biology in the 1960s
-and 1970s brought key bioinformatic discoveries, such as the first
-sequence alignment algorithms, models for evolution, and substitution matrices
-for amino acids.  The theory
-underlying many modern computational tools was being developed, but many analyses
+and 1970s brought key bioinformatic discoveries, but many analyses
 were conducted by eyeballing entire datasets and shuffling data by hand.
 Protein sequences and alignments were distributed in the annual printed Dayhoff
 atlases that biologists would type by hand onto punch cards.  In the 1980s,
@@ -90,7 +87,8 @@ increasingly finding themselves at the computer.
 However, most biologists lack a strong background in mathematics or
 computer science, and are daunted as they attempt to transition from a graphical
 computer desktop environment to the command line interface on a 
-supercomputer.  Further, while they
+supercomputer or use graphical programming to create remote 
+multicomponent pipelines.  Further, while they
 usually have intensive training using good safety practices 
 for wet-lab experiments, they have minimal experience with computational 
 lab safety practices and therefore lack the knowledge necessary to 
@@ -128,7 +126,7 @@ and use them on large datasets without first
 running a known test set
 (the computational equivalent of a control or standard).  Many programs contain
 technical or scientific errors that will be readily apparent when running 
-test sets, but will be missed otherwise. Errors will be
+test sets, but will be missed otherwise\cite{}. Errors will be
 carried into downstream analyses, potentially costing
 hundreds of hours of compute and bench time.  
 
@@ -165,7 +163,8 @@ joins the online graveyard of dead and obsolete code.
 \end{enumerate}
 
 The good news is that
-all of these problems can be solved using computational tools that are already available.  
+all of these problems can be solved using tools 
+and practices that are already available.  
 
 \subsection{Reproducible research is attainable in Bioinformatics using modern tools}
 
@@ -220,7 +219,8 @@ stand ready on the computational benchtop.
 \subsubsection{Unix/Linux operating system}
 
 Most biologists are aware of the two primary computing platforms available:
-Windows and Unix system (Linux and Mac OSX) systems. In the United States, most people
+Windows and Unix systems (which include Linux and Mac OSX). 
+In the United States, most people
 learn basic computer skills exclusively on Windows machines.  
 However, developers of bioinformatics
 software primarily Unix systems because the Unix
@@ -235,7 +235,8 @@ The Free Software Foundation\cite{FSF} has numerous
 open-source collections of development
 tools, libraries, licenses, and applications for the GNU/Linux system.
 Consequently, biologists can get an operating system and all the bioinformatics
-tools they need for free.  Further, Unix systems are commonly used when 
+tools they need for free for all of their computers/clusters.  
+Further, Unix systems are commonly used when 
 running on remote machines, whether the machine is a desktop computer 
 in another room, an institution's high performance compute cluster, or 
 the Cloud.
@@ -259,7 +260,8 @@ basic command line navigation skills to use the latest software.  Biologists
 who use Windows but wish to take advantage of this cache of software and tools
 can download and install a free program such as Cygwin (or MSYS+Mingw32 or 
 Microsoft Interix) to emulate a Unix system
-on their Windows machine; therefore, they can still use Windows for everything
+on their Windows machine or can use PowerShell; 
+therefore, they can still use Windows for everything
 else. Note: modern Macintosh machines are a
 good compromise for modern research labs because they have a GUI for casual use
 and the Terminal program provides a command line interface with many useful
@@ -361,9 +363,8 @@ cdrom images and can create tar, pax, cpio, ar, and shar archives\ldots}\\*
 
 Note: Apropos and man commands serve as a reference, not a tutorial on how to use
 a particular command. Biologists may need to search in Google,
-Wikipedia and other resources to find tutorials, examples, and other informations.
-\texttt{software-carpentry.org} website is a good place to start with for a tutorial
-for many Unix commands.
+Wikipedia, and other resources to find tutorials, examples, and other information.
+\texttt{software-carpentry.org} is one of many websites hosting Unix tutorials.
 
 \paragraph{History and Script}
 
@@ -459,7 +460,7 @@ previous example, a biologist would vary the parameters listed in the params
 variable for each run.  The results are more comparable and reproducible, and
 automating the procedure speeds up the parameter optimization process.
 
-\subsubsection{Text editors and IDEs -- the new word processors}
+\subsubsection{Text editors and IDEs -- the computationalists' word processors}
 
 Text editors are 
 similar to word processors in that they are used to open,
@@ -475,10 +476,10 @@ those biologists who use Windows machines locally and Unix systems
 remotely.
 
 Two editors are particularly popular among scientists: Emacs and Vi (or Vim).
-Both editors are cross-platform and have features that help increase the productivity
-such as macros that can record and perform a task repeatedly, a regular expression
-for search/replace and etc.
-Emacs and Vi can also be programmed to function in a particular way with
+Both editors are cross-platform and have features that help increase productivity
+such as macros that can automate tasks, regular expressions to 
+tailor/speed search and replace, etc.
+Emacs and Vi can also be modified/customized using 
 a scripting language such as Emacs Lisp or Vim script.
 This feature makes these two editors highly expandable and flexible.
 Numerous free plugins for both editors are developed and maintained by a
@@ -520,8 +521,8 @@ essential for computational lab safety.
 
 \subsection{Programming languages}
 
-A programming langauge is a set of instructions that can be translated into
-a machine code that instructs a computer to perform a task.
+A programming language is a set of human-readable instructions that is translated into
+machine code to instruct a computer to perform a task.
 They are generally categorized as \emph{interpreted} and \emph{compiled}.
 Interpreted (scripting) languages (such as Python, Perl, and Ruby) use an
 interpreter program to translate human-readable
@@ -577,8 +578,7 @@ Furthermore, various versions of the scripts are frequently scattered
 over the local file directory. This problem is akin to a biologist performing a
 quick procedure at the bench, writing scant notes, and not cleaning up. 
 
-In this
-section, we discuss basic programming
+In this section, we discuss basic programming
 practices that help novice programmers organize their code and make their
 scripts more reusable for other projects. We also introduce version control 
 systems that facilitate
@@ -640,7 +640,7 @@ redundant and can be omitted.
 This is a simple example of how code readability can be improved 
 by choosing appropriate variable names and commenting code sparingly.
 
-\subsubsection{Managing code with a version control system}
+\subsubsection{Managing code/text with a version control system}
 
 A common change tracking nightmare 
 is when a programmer creates a script 
@@ -675,6 +675,13 @@ programmers modify the same line of code) are flagged for manual resolution.
 For nonprogrammers, a VCS is a
 useful means of obtaining up-to-date software tools.  Users can download code
 from the VCS and know exactly which version they are downloading.
+
+Note: VCSs are also commonly used when collaborators are writing 
+a paper using LaTeX or a similar document markup language.  Each collaborator 
+has immediate access to the most recent version of the paper, can make 
+changes directly to the document, and commit them, as opposed 
+to trading various versions via email or having one author decipher scribbled-on 
+printouts.
 
 This is particularly useful when a research lab has one programmer 
 and multiple users because the programmer can create/edit scripts in
