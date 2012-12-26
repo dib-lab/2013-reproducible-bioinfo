@@ -28,7 +28,7 @@ The birth of computational biology in the 1960s
 and 1970s brought key bioinformatic discoveries, but many analyses
 were conducted by eyeballing entire datasets and shuffling data by hand.
 Protein sequences and alignments were distributed in the annual printed Dayhoff
-atlases that biologists would type by hand onto punch cards.  In the 1980s,
+atlases \cite{Strasser2010}that biologists would type by hand onto punch cards.  In the 1980s,
 improved technology and discoveries in computer science enabled greater
 capabilities in biology both in software and hardware.  The term bioinformatics
 was coined for the first time and the first major sequence databases were
@@ -45,7 +45,7 @@ human genome.  While complete genome
 sequencing was a reality, the methodology was laborious and time-consuming,
 spurring scientists to develop the next generation of sequencing technology,
 which culminated in mid-2000s with faster, cheaper, and more accurate
-sequencing. This technology has resulted in an explosion of biological data
+sequencing\cite{Ansorge2009}. This technology has resulted in an explosion of biological data
 with bioinformaticians racing to develop computational tools to mine it.  
 
 \subsection{Computational analysis in next-generation sequencing era}
@@ -63,9 +63,9 @@ Clinical Sequencing Exploratory Research\cite{CSER},
 Centers for Mendelian Genomics\cite{CMG}, Environmental Genome Project\cite{EGP}, 
 and HapMap Project\cite{IHP} are hosted on
 massive compute platforms
-(such as XSEDE\cite{Xsede} and Amazon EC2\cite{AEC2}), available for large groups of 
+(some of which include XSEDE\cite{Xsede} and Amazon EC2\cite{AEC2}), available for large groups of 
 researchers to mine.  As the field comes closer to achieving the 
-\$1000 genome, individual genomes will inundate the 
+\$1000 genome\cite{Mardis2006}, individual genomes will inundate the 
 public databases, providing a rich information source for
 researchers to analyze with a dazzling array of statistical tools.  Further,
 proteomics, metabolomics, medical imaging, environmental conditions, and many
@@ -74,7 +74,7 @@ scientists continue to push the edge of data analysis, the combination of
 different data sources into sophisticated analyses is required.  The field has
 advanced far from the eye/hand methods of the pre-genomic era and outstripped
 the spreadsheets and single software packages of the early post-genomic era.  
-Modern computational analyses are a major part of biological studies
+Modern computational analyses are a major part of biological studies \cite{Zhulin2009}
 and require passing gigabytes of data through sophisticated computational
 pipelines, which typically involve several distinct programs with custom
 scripts porting data between them, running from the quality control of raw data
@@ -86,10 +86,11 @@ complex results.
 Genomics has shifted the driver of science from hypothesis (devise a question 
 and design/conduct experiments) to discovery (sift through large datasets 
 to find something useful).  With this greater emphasis on performing 
-statistical analyses of large datasets, wet-lab biologists are
-increasingly finding themselves at the computer instead of the bench.  
+statistical analyses of large datasets and simulating models, wet-lab biologists are
+increasingly finding themselves at the computer instead of the bench\cite{Merali2010}.  
 However, most biologists lack a strong background in mathematics or
-computer science, and are daunted as they attempt to transition from a graphical
+computer science\cite{Bialek2004,Pevzner2009}, 
+and are daunted as they attempt to transition from a graphical
 computer desktop environment to the command line interface on a 
 supercomputer or use graphical programming to create remote 
 multicomponent pipelines.  Further, while they
@@ -97,7 +98,7 @@ usually have intensive training using good safety practices
 for wet-lab experiments, they have minimal experience with computational 
 lab safety practices and therefore lack the knowledge necessary to 
 efficiently perform high-quality reproducible 
-computational research.
+computational research\cite{Merali2010,Segal2007}.
 
 \subsection{Concerns in Bioinformatic research}
 
@@ -107,17 +108,18 @@ to have trained bioinformaticians and computer scientists handle the
 computational aspect of biology, this is currently impossible for two reasons:
 not enough skilled bioinformaticians are available (only a minuscule percentage
 of US universities have bioinformatics undergraduate programs) and many
-computer scientists are uninterested in science or unwilling to pursue careers
-that pay considerably less than a commercial position.  As a result, many
+computer scientists are uninterested/uneducated in science or unwilling to pursue careers
+that pay considerably less than a commercial position.  
+As a result, many
 wet-lab biologists have stepped forth to learn enough 
-computational skills to analyze their own data.  
+computational skills to analyze their own data\cite{Heaton2012,Kelly2008}.  
 They are usually long on data and short on time, so they
 focus on learning the computational tools needed to analyze their specific
 data, concentrating on rapidly processing data with the tools 
 as opposed to understanding the tools' underlying
 assumptions.  Further, there is a cultural gap
 because many labs/programs do not consider bioinformatics training 
-essential for their biologists.  A young researcher seeking to analyze large datasets 
+essential for their biologists\cite{Segal2007}.  A young researcher seeking to analyze large datasets 
 when few or none of his/her coworkers or superiors have
 computational expertise may have no clue where to begin, be given very little
 time to find or program appropriate tools, and therefore develops an ad-hoc
@@ -130,9 +132,10 @@ and use them on large datasets without first
 running a known test set
 (the computational equivalent of a control or standard).  Many programs contain
 technical or scientific errors that will be readily apparent when running 
-test sets, but will be missed otherwise\cite{}. Errors will be
-carried into downstream analyses, potentially costing
-hundreds of hours of compute and bench time.  
+test sets, but will be missed otherwise\cite{Kelly2008}. Errors will be
+carried into downstream analyses, costing
+hundreds of hours of compute and bench time, and 
+potentially causing retraction of papers when the errors are caught\cite{Merali2010}.  
 
 \item Many tools only run on the command line, are difficult to install, lack
 documentation, etc., and therefore biologists may
@@ -160,10 +163,11 @@ being wrong.
 
 \item Biologists who program their own tools must decide how
 to release and support their code.
-Most labs post their software on a website but rarely update it.  
+Some labs post their software on a website but rarely update it.  
 Frequently as soon as the lab programmer
 leaves the lab, the code becomes unsupported and soon
 joins the online graveyard of dead and obsolete code.  
+Some labs refuse to release their code\cite{Morin2012}.  
 \end{enumerate}
 
 The good news is that
@@ -183,10 +187,10 @@ documentation available from years of use.  Investing time to learn the
 tools and establishing good habits of using them yields a larger benefit:
 errors are consistently detected and corrected early instead of being
 discovered only after time-consuming downstream analyses and attempted wet-lab
-verification (or after a paper has been submitted or published).  The more
+verification (or after a paper has been submitted or published\cite{Miller2006}).  The more
 computational methods employed by a laboratory, the more essential the tools
 are.  Further, while 
-use of these tools is currently optional in biology, researchers can 
+use of these tools is currently optional in biology\cite{Ince2012}, researchers can 
 expect that within a decade, most journals and granting agencies will 
 require all computational tools and procedures to be made freely accessible online.
 
@@ -233,8 +237,8 @@ redistribute resources under open-source licenses.  The open-source or
 free-software community has long attracted programmers and other 
 technically-oriented people who use practical skills  
 to creatively solve problems, frequently resulting in solutions that 
-are more robust than  
-those developed in commercial industry.    
+are more cutting-edge than  
+those supported by commercial industry.    
 The Free Software Foundation\cite{FSF} has numerous 
 open-source collections of development
 tools, libraries, licenses, and applications for the GNU/Linux system.
@@ -463,7 +467,7 @@ previous example, a biologist would vary the parameters listed in the params
 variable for each run.  The results are more comparable and reproducible, and
 automating the procedure speeds up the parameter optimization process.
 
-\subsubsection{Text editors and IDEs -- the computationalists' word processors}
+\subsubsection{Text editors and IDEs -- the bioinformaticians' word processors}
 
 Text editors are 
 similar to word processors in that they are used to open,
@@ -549,8 +553,8 @@ Both languages have a large user-based community, reference materials and
 high-quality third-party libraries.
 While academia in particular has a culture of 
 developing tools from scratch even when alternatives are available, this practice
-is outdated because pipelines are too complex for a single
-researcher to develop quickly. Third-party libraries are developed 
+is outdated because pipelines are too complex for a single novice programmer 
+to develop quickly and accurate\cite{Wilson2006}. Third-party libraries are developed 
 by programmers other than the developers of the language itself that extend the language
 with custom written functions.  For example,   
 biologists who want to develop a bioinformatics web application 
@@ -733,6 +737,8 @@ publications.
 
 \subsubsection{Basic code testing}
 
+Roughly one to ten programming errors occur 
+per thousand lines of code\cite{Boehm2005,Ince2012}.  
 In this section, we discuss techniques to help
 programmers find obvious bugs upfront: 
 assert statements and doctests. We introduce more advanced
@@ -811,10 +817,10 @@ Therefore, writing tests should be incremental; each newly discovered bug
 should prompt the addition of a new test.
 
 Tests are useful on many levels, but some programmers still do not
-write tests.  One reason is that test writing is not formally taught in most
+write tests\cite{Wilson2006}.  One reason is that test writing is not formally taught in most
 undergraduate computer science courses and therefore many programmers, let
 alone biologists, lack the required knowledge or experience.  Another reason is
-because it is time-consuming and not considered a critical path activity.
+because it is time-consuming and not considered a critical path activity\cite{Segal2007,Kelly2008}.
 Rigorous tests may contain more lines of code than the actual code. 
 However, the software industry has proven that 
 programmers who write tests 
@@ -871,7 +877,7 @@ and performing a complex analysis from start to finish.
 
 Although biologists/bioinformaticians use many software engineering guidelines, 
 they disregard others for one particular reason:
-absence of a detailed program specification.  Ideally, industrial
+absence of a detailed program specification\cite{Segal2007}.  Ideally, industrial
 programmers have a complete set of specs from the customer 
 and can design an elegant software solution before they begin
 coding.  In the bioinformatics lab, programmers frequently have only a piece of
@@ -890,7 +896,7 @@ writing code quickly because the programmer assumes that most code will be
 modified or discarded during the development process.  Therefore,
 biologists/bioinformaticians should write code that is 1) functional, 2)
 readable, and 3) testable.  Functionality is most important because if code
-does not work, then it is considered worthless.
+does not work, then it is considered worthless\cite{Kelly2008}.
 Readability is necessary so the code can be understood by all programmers and users
 on the project.  
 Testability is required
@@ -1113,6 +1119,10 @@ The analysis was tested on Amazon cloud service with
 can follow the pipeline and use the notebook to reproduce the
 analysis from start to finish with identical results with minimal effort.
 
+At the NIH Cloud Computing for the Microbiome workshop in 2012, a 
+team of researchers from different backgrounds used IPython notebook 
+and Amazon EC2 to produce publishable results in record time\cite{RaganKelley2012}.
+
 \section{Related Topics}
 
 For those biologists/bioinformaticians who have progressed through the Beginner
@@ -1219,7 +1229,7 @@ processing and precise floating point calculations.
 
 The general problem in the
 bioinformatics field is not an absence of tools and good practices, but rather
-that many researchers lack knowledge and training with them.  With a scientific
+that many researchers lack knowledge and training with them\cite{Merali2010}.  With a scientific
 culture that is relatively naive about computational lab safety practices, 
 many biologists make their
 first foray into bioinformatics with only intuition and the Internet to guide
