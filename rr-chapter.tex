@@ -28,7 +28,8 @@ The birth of computational biology in the 1960s
 and 1970s brought key bioinformatic discoveries, but many analyses
 were conducted by eyeballing entire datasets and shuffling data by hand.
 Protein sequences and alignments were distributed in the annual printed Dayhoff
-atlases \cite{Strasser2010}that biologists would type by hand onto punch cards.  In the 1980s,
+atlases \cite{Strasser2010}that budding bioinformaticians 
+would type by hand onto punch cards.  In the 1980s,
 improved technology and discoveries in computer science enabled greater
 capabilities in biology both in software and hardware.  The term bioinformatics
 was coined for the first time and the first major sequence databases were
@@ -88,9 +89,9 @@ and design/conduct experiments) to discovery (sift through large datasets
 to find something useful).  With this greater emphasis on performing 
 statistical analyses of large datasets and simulating models, wet-lab biologists are
 increasingly finding themselves at the computer instead of the bench\cite{Merali2010}.  
-However, most biologists lack a strong background in mathematics or
+However, many biologists lack a strong background in mathematics or
 computer science\cite{Bialek2004,Pevzner2009}, 
-and are daunted as they attempt to transition from a graphical
+and struggle to transition from a graphical
 computer desktop environment to the command line interface on a 
 supercomputer or use graphical programming to create remote 
 multicomponent pipelines.  Further, while they
@@ -138,14 +139,14 @@ hundreds of hours of compute and bench time, and
 potentially causing retraction of papers when the errors are caught\cite{Merali2010}.  
 
 \item Many tools only run on the command line, are difficult to install, lack
-documentation, etc., and therefore biologists may
+documentation, etc., and therefore some biologists may
 select software based not on accuracy and scientific relevance, but simply on
 ease of use.  
 
 \item With the trial and error
-approach used to create custom pipelines, biologists can
+approach used to create custom pipelines, some biologists can
 lose track of which tools they ran, the order in which they ran them, and the
-parameter sets used for each.  Biologists have not carried 
+parameter sets used for each.  Many biologists have not carried 
 the standard scientific practice of recording
 painstakingly detailed procedures in laboratory notebooks for wet-lab
 experiments over into computational research.
@@ -161,7 +162,7 @@ A single parameter
 can be the difference between one group's results being correct and another's
 being wrong.  
 
-\item Biologists who program their own tools must decide how
+\item Those biologists who program their own tools must decide how
 to release and support their code.
 Some labs post their software on a website but rarely update it.  
 Frequently as soon as the lab programmer
@@ -194,19 +195,19 @@ use of these tools is currently optional in biology\cite{Ince2012}, researchers 
 expect that within a decade, most journals and granting agencies will 
 require all computational tools and procedures to be made freely accessible online.
 
-\subsection{Guidelines for getting started} Our goal is to help biologists who
+\subsection{Guidelines for getting started} Our goal is to help those biologists who
 have zero or little background in computation to
 get started. The following sections are structured to provide
-introductory knowledge for biologists venturing into bioinformatics and the
+introductory knowledge for those biologists venturing into bioinformatics and the
 command line interface for the first time, intermediate knowledge for those
 biologists ready to start programming, advanced techniques for seasoned
 programmers for improving programs and automating pipelines, and a related tools
 section that names those tools and concepts that readers can seek out once they
 have established a strong computational foundation for reproducible research.
 
-Note: the following sections give overviews and simple examples of the tools, 
+\textsl{Note: the following sections give overviews and simple examples of the tools, 
 but readers are encouraged to use the resources listed at the end of
-the chapter to find more specific information and step-by-step tutorials.
+the chapter to find more specific information and step-by-step tutorials.}
 
 \section{Beginner} Here we discuss simple practices that beginners can use
 to establish a strong foundation for making their computational research
@@ -249,18 +250,23 @@ running on remote machines, whether the machine is a desktop computer
 in another room, an institution's high performance compute cluster, or 
 the Cloud.
 
-Making the switch from Windows to Unix
-is useful because the power available at the command line outstrips that
-of a graphical user interface (GUI); as an analogy, Windows is similar to a lab
-that relies exclusively on commercial kits whereas the command line on Unix
-systems is like a lab that is equipped with chemicals and instruments that can be used 
+Making the switch from graphical user interface (GUI) based software 
+to command line is useful because
+the power available at the command line outstrips that
+of most GUI-based software; as an analogy, GUI-based software is similar to a lab
+that relies exclusively on commercial kits whereas the command line 
+is like a lab that is equipped with chemicals and instruments that can be used 
 to supplement the kits or develop novel techniques.  Also, many
-GUI-based software packages require biologists to manually click through an analysis
+GUI-based software packages require users to manually click through an analysis
 while the command line can be used to write complete instructions for an
 analysis and run many datasets simultaneously.   Automation ensures 
 that each dataset is run according to the
 same instructions (avoiding human error) and unshackles the biologist from
-the computer.  Further, most
+the computer.  
+Some GUI and web-based programs are available 
+for those biologists who want to build pipelines without using 
+the command line (such as Taverna, Pipeline Pilot, and Galaxy).  
+Further, most
 cutting-edge bioinformatics tools lack a GUI,
 partly because building GUIs is a time-consuming task that is
 difficult to fund; biologists will need
@@ -268,11 +274,11 @@ basic command line navigation skills to use the latest software.  Biologists
 who use Windows but wish to take advantage of this cache of software and tools
 can download and install a free program such as Cygwin (or MSYS+Mingw32 or 
 Microsoft Interix) to emulate a Unix system
-on their Windows machine or can use PowerShell; 
-therefore, they can still use Windows for everything
-else. Note: modern Macintosh machines are a
+on their Windows machine or can use PowerShell. 
+
+\textsl{Note: modern Macintosh machines are a
 good compromise for modern research labs because they 
-have a Unix-based system with a friendly GUI for casual use.
+have a Unix-based system with a friendly GUI for casual use.}
 
 \subsubsection{Unix tools -- the new benchtop tools}
 
@@ -292,7 +298,7 @@ introduce some of the most basic, useful Unix tools for bioinformatics.
 Shell is a language as well as interpreter that reads and interprets commands
 from a user. Any biologist who has opened a terminal or command line interface
 and typed a command has used shell. There are several shells available for Unix
-system, but Bourne-again Shell or Bash is predominant. 
+system, but Bourne-again Shell (Bash) is predominant. 
 Bioinformaticians often use shell commands to
 run tools and automate tasks such as backing up
 data and submitting jobs on a computer cluster. While shell languages can be
@@ -334,8 +340,8 @@ knowing the program's name. For example, if a biologist wanted to archive files,
 he/she might use the \emph{apropos} command to search for an appropriate tool:\\* \\*
 \texttt{\$ apropos archive}\\*
 
-Note: \$ indicates the command prompt or where the user would begin typing.
-The user would not actually type the \$.
+\textsl{Note: \$ indicates the command prompt or where the user would begin typing.
+The user would not actually type the \$.}
 
 The output will vary depending on system, but should look like:\\* \\*
 \texttt{jar(1)    - Java archive tool}\\*
@@ -368,10 +374,10 @@ the standard manual for the tar program.\\* \\*
 implementation can extract from tar, pax, cpio, zip, jar, ar, and ISO 9660
 cdrom images and can create tar, pax, cpio, ar, and shar archives\ldots}\\*
 
-Note: Apropos and man commands serve as a reference, not a tutorial on how to use
+\textsl{Note: Apropos and man commands serve as a reference, not a tutorial on how to use
 a particular command. Biologists may need to search in Google,
 Wikipedia, and other resources (such as \texttt{software-carpentry.org}) 
-to find tutorials, examples, and other information.
+to find tutorials, examples, and other information.}
 
 \paragraph{History and Script}
 
@@ -398,7 +404,7 @@ in their bound lab notebook.  Another option is save the commands in a text
 file as a rudimentary electronic notebook so the biologist can search for a
 procedure later.   
 
-Example of saving shell commands in a bound or electronic notebook:\\* \\*
+Example of shell commands to be written/typed in a bound or electronic notebook:\\* \\*
 \texttt{bowtie-build DataSet001.fa DataSet001.Index}\\*
 \texttt{bowtie -m 1 DataSet001.Index DataSet001Reads.fq DataSet001.map }\\*
 
@@ -483,7 +489,7 @@ those biologists who use Windows machines locally and Unix systems
 remotely.
 
 Two editors are particularly popular among scientists: Emacs and Vi (or Vim).
-Both editors are cross-platform and have features that help increase productivity
+Both editors are cross-platform and have features that can increase productivity
 such as macros that can automate tasks, regular expressions to 
 tailor/speed search and replace, etc.
 Emacs and Vi can also be modified/customized using 
@@ -504,11 +510,11 @@ intend to progress to programming their own tools, IDEs are a convenient step
 up from text editors.
 
 \section{Intermediate} This section addresses programming, the keystone of
-bioinformatics research.  Biologists will be learn how to 
-select a programming language, use good programming practices for
-developing error-free and efficient code, document programs for self and
-general use, implement a version control system as an electronic notebook
-and distribution method, and develop controls for testing homegrown code.  These
+bioinformatics research.  Biologists will be introduced to 
+programming languages (and how to select one), good programming practices for
+developing error-free and efficient code, program documentation for self and
+general use, version control systems as electronic notebooks
+and distribution methods, and controls for testing homegrown code.  These
 sections are each intended as an overview of the tools and practices for
 writing scripts that are shorter than a page or two in length.  References and
 tutorials for learning the languages and tools are included at the end of the
@@ -621,21 +627,19 @@ the name of the author, contributors,
 installation, usage, and licenses for all programs in the repository.  
 
 Code readability is important.  
-When a complicated statement is required, programmers write an 
-explanatory comment.
-However, it is considered poor practice to write excessive or 
-uninformative comments
-because they slow
-readers.  For example, a new programmer might write the following comment:\\* \\*
+Experienced programmers customarily use two practices to improve readability:
+descriptive variable/function names and concise but clear comments.  
+For example, a new programmer might write the following code and comment 
+(comment shown in italics):\\* \\*
 \texttt{x += 1  \emph{\# add 1 to x}}\\
 
-Readers with minimal knowledge of Python will easily recognize that 1 is added
+Readers with minimal knowledge of Python will recognize that 1 is added
 to a variable \emph{x}. The comment does not provide any information about the purpose
-of the statement. Instead, the code should be commented like this:\\* \\*
+of the statement or describe \emph{x}. Instead, the code should be commented like this:\\* \\*
 \texttt{x += 1  \emph{\# increase the number of DNA sequences read from the
 input fasta file by one}}\\
 
-This way, a reader will quickly understand that x is the number of DNA
+This way, a reader will quickly understand that \emph{x} is the number of DNA
 sequences read and the number is being incremented by one.  A more useful way
 to write this statement is:\\* \\*
 \texttt{number\_of\_dna\_seqs\_read += 1
@@ -652,19 +656,24 @@ by choosing appropriate variable names and commenting code sparingly.
 A common change tracking nightmare 
 is when a programmer creates a script 
 and sends a copy to Collaborator A. After a period of time, 
-Collaborator A finds a bug in the script and informs
-the author. The author fixes the bug and sends an updated version 
+Collaborator A finds a bug in the first version of the script and informs
+the author. The author fixes the bug and sends Version 2
 of the script to Collaborator A, not knowing that Collaborator A 
-previously sent the
-old script to Collaborators B and C, who are not privy to the new version.  
-Further, Collaborator A may inadvertently confuse the older
-version with the new version because the script name is the same for both and
-the only difference is in the code, which Collaborator A cannot read. Also, 
-Collaborator B with the original code might try to compare
-results on a similar dataset with Collaborator A's results from the new script,
+previously sent Version 1 to Collaborators B and C, who are not privy to Version 2 
+and therefore are likely to have unknowingly generated erroneous results with it.  
+Further, Collaborator A may inadvertently confuse Version 1
+with Version 2 because the script name is the same for both and
+the only difference is in the code, which Collaborator A cannot read. Later, 
+Collaborator B with Version 1 might try to compare
+results on a similar dataset with Collaborator A's results from Version 2,
 spending considerable time tracking down perceived scientific differences, 
 resulting in at best a re-discovery of the bug and at
-worst attempts to publish the erroneous comparison in a journal.  
+worst attempts to publish the erroneous comparison in a journal.  The author, 
+who has upgraded to Version 5, 
+is unaware of anything except that 
+Collaborator A was sent Version 2 a long time ago.  This convoluted 
+comedy of errors is the reason why version control is needed to track changes to 
+scripts and distribute them to all collaborators.
 
 A version control system
 (VCS) is a program that tracks changes made to a file or set of files in a specified
@@ -683,12 +692,12 @@ For nonprogrammers, a VCS is a
 useful means of obtaining up-to-date software tools.  Users can download code
 from the VCS and know exactly which version they are downloading.
 
-Note: VCSs are also commonly used when collaborators are writing 
+\textsl{Note: VCSs are also commonly used when collaborators are writing 
 a paper using LaTeX or a similar document markup language.  Each collaborator 
 has immediate access to the most recent version of the paper, can make 
 changes directly to the document, and commit them, as opposed 
 to trading various versions via email or having one author decipher scribbled-on 
-printouts.
+printouts.}
 
 This is particularly useful when a research lab has one programmer 
 and multiple users because the programmer can create/edit scripts in
@@ -701,9 +710,9 @@ Also, when the programmer leaves the lab, the latest versions of the
 tools are in the VCS so a newly hired replacement can immediately
 access and start maintaining the code.
 
-Note: while setting up a VCS will require an initial investment of time, 
+\textsl{Note: while setting up a VCS will require an initial investment of time, 
 subsequent use is usually limited to a few simple commands.  Some VCSs
-also include a GUI to help beginners and nonprogrammers use the system.
+also include a GUI to help beginners and nonprogrammers use the system.}
 
 Some major version control systems (Git, Mercurial, etc.) are associated with websites 
 that host repositories for free.  For example, GitHub.com hosts more than 200,000 free code
@@ -718,12 +727,12 @@ fulfill bioinformatic journals' requirement of open-access software,
 which is advantageous because the site is separate from
 university or business websites that may change over time.  
 
-Note: biologists who prefer to keep their
+\textsl{Note: biologists who prefer to keep their
 code for internal use only can set up Git or Mercurial to work 
 locally only, pay Github for private repositories, or use Bitbucket.  
 Alternatively, they can set up their own secure
 server (or have a network administrator set it up) and use
-VCSs such as Subversion (SVN).
+Git or Subversion (SVN).}
 
 \paragraph{Real world example}
 
@@ -789,12 +798,12 @@ previous example demonstrated this by testing
 from common to uncommon cases.  The more assert statements
 added, the more likely an existing error will be found.  
 
-Note: assert
+\textsl{Note: assert
 statements are also useful 
 when the programmer is upgrading the code later.
 A good programmer is not afraid to modify code and add features because the
 tests ensure that changes that break the existing code will almost always
-be discovered immediately.
+be discovered immediately.}
 
 \item Doctest
 
@@ -875,9 +884,9 @@ modern huge datasets, and using the IPython notebook as an interactive
 notebook/computing environment for integrating different programs and platforms
 and performing a complex analysis from start to finish.
 
-Although biologists/bioinformaticians use many software engineering guidelines, 
-they disregard others for one particular reason:
-absence of a detailed program specification\cite{Segal2007}.  Ideally, industrial
+Biologists/bioinformaticians grapple with a major problem before they start 
+designing a new program:
+absence of detailed program specifications\cite{Segal2007}.  Ideally, industrial
 programmers have a complete set of specs from the customer 
 and can design an elegant software solution before they begin
 coding.  In the bioinformatics lab, programmers frequently have only a piece of
@@ -934,7 +943,7 @@ many times as needed in the main program.
 \item Library modules are easier to maintain.  
 In the linear program example, if a bug is found when
 reading the first FASTA file, then the error is likely to be in all instances
-of the code.  Biologists/bioinformaticians frequently only fix those
+of the code.  Novice programmers frequently only fix those
 instances where an obvious error is shown, leaving silent errors in other parts
 of the program.  In the modular example, the bug is fixed once in the module.  
 Similarly, the module need only be
@@ -1013,14 +1022,14 @@ the entire program.  The bottlenecks can be found using a tool called a profiler
 which reports the time and the number of times a particular
 function or a method is called.
 
-Note: some common bottlenecks in bioinformatics programs involve 
+\textsl{Note: some common bottlenecks in bioinformatics programs involve 
 loading data multiple times, unnecessary reading/writing data to disk, 
 and inefficient searching using nested loops and can be opened 
 by using more efficient algorithms or data structures.  
 Novice programmers are prone to writing algorithms that 
 mimic how a human would perform a task instead of 
 harnessing the abilities of the computer 
-and the specific programming language.
+and the specific programming language.}
 
 Optimization depends on the
 languages being used. For a bioinformatics program written in Perl or Python, a
