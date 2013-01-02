@@ -1097,11 +1097,21 @@ for everything else.
 
 The IPython notebook is built on top of IPython, an advanced Python shell for
 interactive Python programming, but can support many more programming
-languages.  Also, R commands can be run from within IPython notebook using
-rmagic plugin. 
-Users can therefore use R libraries and save commands in IPython.
-Matplotlib can be used to make graphs in the notebook.  
-Finally, the notebook supports scientific computing packages and practices. 
+languages.
+For example, with rmagic plugin and Python RPy2 library, users can
+use R libraries such as Bioconductors (\emph{see Resources})
+and store the result in Python data structures, which can be analysed further
+with Python.
+This feature faciliates the analysis by reducing many steps in
+data transformation, which has always been a problem in
+bioinformatics research.
+Another useful feature of IPython notebook is an in-line plot, which allows
+users to use Matplotlib library or R to make and visualize a plot then save it
+in Ipython notebook with comments and code to create an executable document.
+Finally, the notebook is stored as a plain text file that can be version controlled
+and distributed as discussed above.
+IPython has many more plugins and shortcuts that support scientific
+computing analyses.
 Shown below is an example of boosting productivity by using a shortcut:\\*\\*
 
 \texttt{>>> expression\_values =!cut -f 2 expression.dat \emph{\# read in a
