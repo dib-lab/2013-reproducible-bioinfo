@@ -28,7 +28,7 @@ The birth of computational biology in the 1960s
 and 1970s brought key bioinformatic discoveries, but many analyses
 were conducted by eyeballing entire datasets and shuffling data by hand.
 Protein sequences and alignments were distributed in the annual printed Dayhoff
-atlases \cite{Strasser2010}that budding bioinformaticians 
+atlases \cite{Strasser2010} that budding bioinformaticians 
 would type by hand onto punch cards.  In the 1980s,
 improved technology and discoveries in computer science enabled greater
 capabilities in biology both in software and hardware.  The term bioinformatics
@@ -66,13 +66,13 @@ and HapMap Project\cite{IHP} are hosted on
 massive compute platforms
 (some of which include XSEDE\cite{Xsede} and Amazon EC2\cite{AEC2}), available for large groups of 
 researchers to mine.  As the field comes closer to achieving the 
-\$1000 genome\cite{Mardis2006}, individual genomes will inundate the 
+\$1000 genome\cite{Mardis2006}, waves of individual genomes will inundate the 
 public databases, providing a rich information source for
 researchers to analyze with a dazzling array of statistical tools.  Further,
 proteomics, metabolomics, medical imaging, environmental conditions, and many
 other kinds of data are not only available for cross-validation, but as
 scientists continue to push the edge of data analysis, the combination of
-different data sources into sophisticated analyses is required.  The field has
+different data types into sophisticated analyses is required.  The field has
 advanced far from the eye/hand methods of the pre-genomic era and outstripped
 the spreadsheets and single software packages of the early post-genomic era.  
 Modern computational analyses are a major part of biological studies \cite{Zhulin2009}
@@ -129,14 +129,15 @@ approach to bioinformatics.
 The effects of this lack of expertise can be dire:  
 \begin{enumerate}
 \item Many researchers download computational tools from the Internet 
+or collaborators 
 and use them on large datasets without first
 running a known test set
-(the computational equivalent of a control or standard).  Many programs contain
+(the computational equivalent of a control).  Many programs contain
 technical or scientific errors that will be readily apparent when running 
 test sets, but will be missed otherwise\cite{Kelly2008}. Errors will be
 carried into downstream analyses, costing
 hundreds of hours of compute and bench time, and 
-potentially causing retraction of papers when the errors are caught\cite{Merali2010}.  
+potentially requiring retraction of papers when the errors are caught\cite{Merali2010}.  
 
 \item Many tools only run on the command line, are difficult to install, lack
 documentation, etc., and therefore some biologists may
@@ -165,10 +166,12 @@ being wrong.
 \item Those biologists who program their own tools must decide how
 to release and support their code.
 Some labs post their software on a website but rarely update it.  
-Frequently as soon as the lab programmer
-leaves the lab, the code becomes unsupported and soon
+Frequently as soon as a programmer
+leaves the lab, their code becomes unsupported and 
 joins the online graveyard of dead and obsolete code.  
-Some labs refuse to release their code\cite{Morin2012}.  
+Some labs refuse to release their code\cite{Morin2012}, 
+leading reviewers and collaborators to wonder if 
+inaccuracies are being hidden.  
 \end{enumerate}
 
 The good news is that
@@ -183,8 +186,9 @@ Engineering.  These
 tools are routinely used to quality control the data analysis process,
 facilitate useful collaborations, and maintain laboriously developed programs
 and pipelines in the long term.  While these tools may be new to many
-biologists, they are well-tested with tutorials and online
-documentation available from years of use.  Investing time to learn the
+biologists, they have been in production for many years and 
+are well-tested with tutorials and online
+documentation.  Investing time to learn the
 tools and establishing good habits of using them yields a larger benefit:
 errors are consistently detected and corrected early instead of being
 discovered only after time-consuming downstream analyses and attempted wet-lab
@@ -207,7 +211,9 @@ have established a strong computational foundation for reproducible research.
 
 \textsl{Note: the following sections give overviews and simple examples of the tools, 
 but readers are encouraged to use the resources listed at the end of
-the chapter to find more specific information and step-by-step tutorials.}
+the chapter to find specific information and step-by-step tutorials.  Essentially, 
+this chapter tells readers about existing tools and why they are important to use, 
+but is not itself a course in computational research.}
 
 \section{Beginner} Here we discuss simple practices that beginners can use
 to establish a strong foundation for making their computational research
@@ -269,7 +275,7 @@ the command line (such as Taverna, Pipeline Pilot, and Galaxy).
 Further, most
 cutting-edge bioinformatics tools lack a GUI,
 partly because building GUIs is a time-consuming task that is
-difficult to fund; biologists will need
+difficult to fund; biologists need
 basic command line navigation skills to use the latest software.  Biologists
 who use Windows but wish to take advantage of this cache of software and tools
 can download and install a free program such as Cygwin (or MSYS+Mingw32 or 
@@ -321,7 +327,7 @@ motif, similar to using a \emph{find all} command in a word processor.  \emph{se
 useful for replacing words or phrases,
 similar to using the \emph{find and replace} command in a word processor.
 \emph{cut} is
-used for selecting a column of data in a text file.  \emph{awk}, among other uses, 
+used for selecting a column of data in a text file.  \emph{awk}, among many other uses, 
 can search through files containing many columns of data and only print
 those lines or columns that are needed for a given application.  
 Each tool is useful when the user needs to
@@ -553,14 +559,14 @@ easier to learn and use, especially for beginners, and for processing
 small datasets or relatively simple
 tasks, the difference in speed is negligible. 
 
-Biologists with no programming experience should consider using an interpreted
-language that is widely used such as Python or Perl.
-Both languages have a large user-based community, reference materials and
+Biologists with no programming experience should consider using a widely-used 
+interpreted language such as Python or Perl.
+Both languages have a large user-based community, reference materials, and
 high-quality third-party libraries.
 While academia in particular has a culture of 
 developing tools from scratch even when alternatives are available, this practice
 is outdated because pipelines are too complex for a single novice programmer 
-to develop quickly and accurate\cite{Wilson2006}. Third-party libraries are developed 
+to develop quickly and accurately\cite{Wilson2006}. Third-party libraries are developed 
 by programmers other than the developers of the language itself that extend the language
 with custom written functions.  For example,   
 biologists who want to develop a bioinformatics web application 
@@ -658,7 +664,7 @@ is when a programmer creates a script
 and sends a copy to Collaborator A. After a period of time, 
 Collaborator A finds a bug in the first version of the script and informs
 the author. The author fixes the bug and sends Version 2
-of the script to Collaborator A, not knowing that Collaborator A 
+to Collaborator A, not knowing that Collaborator A 
 previously sent Version 1 to Collaborators B and C, who are not privy to Version 2 
 and therefore are likely to have unknowingly generated erroneous results with it.  
 Further, Collaborator A may inadvertently confuse Version 1
@@ -742,14 +748,14 @@ projects on Github are also linked to the lab repository
 \texttt{https://github.com/ged-lab}, which serves as the main repository for
 all source code and other materials written by lab members. 
 We include the main repository in all
-publications so that anyone can download our source codes and materials
-for using or reproducing resutls without contacting us. 
-In addition, collaborators or anyone who find a bug or want to contribute to
-the project can do so by simply cloning the project, editing or adding the code
+publications so anyone can download our source codes and materials
+for using or reproducing results without contacting us. 
+In addition, anyone who finds a bug or wants to contribute to
+the project can do so by simply cloning the project, editing or adding code
 and submitting a request to merge a change to the project.
-This opens an opportunity for improving a quality of scientific software
+This opens an opportunity for improving the quality of scientific software
 as well as collaboration.
-This method has been proven very successful in opensource community.
+This method has been proven quite successful in the open-source community.
 
 \subsubsection{Basic code testing}
 
@@ -883,8 +889,8 @@ simple script, new programming practices need to be followed to produce usable
 and maintainable code.  This is analogous to chemists running a small reaction
 in the lab vs.\ chemical engineers scaling up a reaction to run in a chemical
 plant; process and resource management become significantly more important.  As in the
-previous sections, these practices are intended for reproducibility,
-productivity, and frequently to maintain the programmer's sanity.  In this
+previous sections, these practices facilitate reproducibility,
+productivity, and frequently help maintain the programmer's sanity.  In this
 section, we will discuss modularity or the practice of breaking large blocks of
 code into smaller modules, refactoring/optimizing code performance for use with
 modern huge datasets, and using the IPython notebook as an interactive
@@ -902,7 +908,7 @@ Experienced bioinformaticians will quickly
 develop a program that reads input, performs a calculation, and writes
 results so lab members will react to the results, try to validate them, mention
 specifications/expectations that were not stated initially, or
-suggest alternative methods of solving the problem.  The programmer is then
+rethink the problem.  The programmer is then
 expected to refine the program and show new results to
 solicit more feedback iteratively. 
 
@@ -1029,7 +1035,7 @@ the entire program.  The bottlenecks can be found using a tool called a profiler
 which reports the time and the number of times a particular
 function or a method is called.
 Examples of a profiler are GNU gprof for C/C++ and profile,
-cProfile and pstats module for Python.
+cProfile, and pstats module for Python.
 
 \textsl{Note: some common bottlenecks in bioinformatics programs involve 
 loading data multiple times, unnecessary reading/writing data to disk, 
@@ -1071,7 +1077,7 @@ Fortunately, scientists and companies have developed tools to simplify
 the process, allowing researchers to conduct computational analyses while
 simultaneously building the final set of instructions. 
 In this section, we introduce the IPython notebook, which has become
-wildly popular due to its support of Python, shell commands, and R (a
+popular due to its support of Python, shell commands, and R (a
 statistics and graphing program). 
  
 \subsubsection{IPython notebook}
@@ -1092,24 +1098,25 @@ remote server, making it suitable for computer clusters or
 cloud computing systems. The notebook can be distributed to
 collaborators who can rerun all commands and see identical results on their
 computer without the programmer writing any additional documentation.
-The primary problem with using the notebook is that it is not efficient
+
+\textsl{The notebook is not efficient
 for running processes that require days to finish.  Therefore, we write
 shell scripts to perform the laborious number-crunching and use the notebook
-for everything else.
+for everything else.}
 
 The IPython notebook is built on top of IPython, an advanced Python shell for
 interactive Python programming, but can support many more programming
 languages.
-For example, with rmagic plugin and Python RPy2 library, users can
-use R libraries such as Bioconductors (\emph{see Resources})
-and store the result in Python data structures, which can be analysed further
+For example, with the rmagic plugin and Python RPy2 library, users can
+use R libraries such as those from Bioconductor (see \emph{Resources})
+and store the results in Python data structures, which can be further analyzed 
 with Python.
-This feature faciliates the analysis by reducing many steps in
-data transformation, which has always been a problem in
+This feature reducing the number of steps in
+data transformation, which is a common problem in
 bioinformatics research.
 Another useful feature of IPython notebook is an in-line plot, which allows
-users to use Matplotlib library or R to make and visualize a plot then save it
-in Ipython notebook with comments and code to create an executable document.
+users to use Matplotlib library or R to make and visualize a plot, and then save it
+in IPython notebook with comments and code to create an executable document.
 Finally, the notebook is stored as a plain text file that can be version controlled
 and distributed as discussed above.
 IPython has many more plugins and shortcuts that support scientific
@@ -1175,16 +1182,15 @@ used to write concise code and improve speed.
 
 \subsubsection{Debugger}
 
-Code usually contains errors or bugs that cause unexpected results.
-Even though programmers can sometimes guess where the error is from an error message
-thrown by the interpreter or the compiler, a bug that is not caught by the
-interpreter or the compiler (logical error) will not be detected.
+Code frequently contains errors or bugs that cause unexpected results.
+While syntax errors will be caught by the interpreter or compiler, 
+logic errors will not be detected.
 The debugger tool allows programmers to interact with their program such as
-running, pausing, stepping in and out of functions or loops, changing values
-in variables during execution and etc to locate the bug.
+running, pausing, stepping in and out of functions or loops, and changing values
+in variables during execution to locate a bug.
 Most programming languages have at least one debugger.
-GDB is standard debugger on GNU/Linux that can debug a program written in many
-languages including C and C++.
+GDB is the standard GNU/Linux debugger that can be used with most
+common programming languages.
 Moreover, major IDEs such as Eclipse and Netbeans have built-in debuggers
 with GUIs. 
 
@@ -1244,9 +1250,10 @@ will help biologists make a correct decision.
 
 While time-consuming, learning a compiled language such as C/C++
 gives insight into how a computer functions because it requires 
-machine-based knowledge. Scripting languages are designed to abstract away many low level
+machine-based knowledge. Scripting languages are designed to abstract 
+away many low-level
 details to improve programmer productivity. As a result, it also abstracts away
-some important concepts of computing such as memory management. A basic
+important concepts of computing such as memory management. A basic
 understanding of how to program in a compiled language will help biologists
 write better code using scripting languages because of a greater understanding
 of the underlying mechanisms. In addition, many bioinformatics software
@@ -1275,7 +1282,7 @@ Investing in learning computational tools and practices will yield incalculable
 return over the course of a biologist's career.  With the enormous potential
 for discovery available in this era of Big Data, datasets can be expected to
 continue expanding.  A biologist who starts learning and applying general tools
-and good bioinformatics practices now will eventually save \emph{years} of lab time.
+and good computing practices now will eventually save \emph{years} of lab time.
 Moreover, the biologist who invests time in writing tests, using version
 control, and automating/distributing analyses in the IPython notebook will both
 be compliant with journal and granting agency policies for distributing code
@@ -1329,12 +1336,11 @@ science using Python} [Pragmatic Bookshelf]
 \item Lutz, Mark \emph{Learning Python} [O'Reilly]
 \item Model, L Mitchell \emph{Bioinformatics Programming Using Python} [O'Reilly]
 \item Vaingast, Shai \emph{Beginning Python Visualization} [Apress]
-\item Arbuckle, Daniel  \emph{Python Testing: Beginner’s Guide} [Packtpub]
+\item Arbuckle, Daniel  \emph{Python Testing: Beginner's Guide} [Packtpub]
 \end{itemize}
 
 \subsubsection{Others}
 \begin{itemize}
-\item Steven Haddock and Casey Dunn \emph{Practical Computing for Biologists} [Sinauer]
 \item Joe Pitt-Francis, Jonathan Whiteley \emph{Guide to Scientific Computing in C++} [Springer]
 \item James Tisdall \emph{Beginning Perl for Bioinformatics} [O'Reilly]
 \item James Tisdall \emph{Mastering Perl for Bioinformatics} [O'Reilly]
@@ -1382,7 +1388,7 @@ science using Python} [Pragmatic Bookshelf]
 \item Bioconductors: R packages for bioinformatics \\\texttt{http://bioconductor.org}
 \end{itemize}
 
-\subsubsection{Web Forum}
+\subsubsection{Web Forums}
 \begin{itemize}
 \item BioStars: Bioinformatics answers \\\texttt{http://www.biostars.org/}
 \item Stack Overflow: General programming\\ \texttt{http://stackoverflow.com/}
