@@ -7,6 +7,9 @@
 % @CTB Alexis, do you want to be last author?
 % @CTB use latexdiff
 % @CTB mention online fora??
+% @CTB do we reference SWC arxiv paper?
+% @CTB I feel like we maybe need to mention R in the languages...
+% @CTB and RStudio in the IPython Notebook section, sigh
 
 \begin{document}
 
@@ -532,7 +535,7 @@ up from text editors.
 \section{Intermediate} This section addresses programming, the keystone of
 bioinformatics research.  Biologists will be introduced to 
 programming languages (and how to select one), good programming practices for
-developing error-free and efficient code, program documentation for self and
+developing less error-prone and more efficient code, program documentation for self and
 general use, version control systems as electronic notebooks
 and distribution methods, and controls for testing homegrown code.  These
 sections are each intended as an overview of the tools and practices for
@@ -542,15 +545,15 @@ chapter.
 
 \subsection{Programming} Programming is one of the most valuable skills for 
 bioinformaticians. For example, just
-as an experienced wet-lab biologist might quickly devise a gel to
+as an experienced wet-lab biologist might quickly pour a gel to
 purify a new sample, a bioinformatician will write a small
 script to filter a raw data file. Some scripts only contain a few
 lines of code, which are written for immediate use and then discarded.  
 Therefore, most custom scripts are not documented, tested, or 
 maintained.  Major problems arise when hastily-written scripts are blindly
 reused for other projects or different datasets without proper quality control.  In
-this section we discuss programming tools and practices that are 
-essential for computational lab safety. 
+this section we discuss programming tools and approaches that are 
+important for good computational lab practice.
 
 \subsection{Programming languages}
 
@@ -558,20 +561,21 @@ A programming language is a set of human-readable instructions that is translate
 machine code to instruct a computer to perform a task.
 They are generally categorized as \emph{interpreted} and \emph{compiled}.
 Interpreted (scripting) languages (such as Python, Perl, and Ruby) use an
-interpreter program to translate human-readable
-code to machine code at run time (when the user is executing the
-program). Compiled languages (such as C, C++, and Java)
-use a compiler program for translation that is run 
-during code development, producing an executable file that
-contains only machine code. Both types of languages are widely used in
+interpreter program to run programs in one step, 
+when the user is executing the
+program. Compiled languages (such as C, C++, and Java)
+use a two-step approach; the first step, compilation, run 
+during code development, produces an executable file that
+contains only machine code. This file is then executed by the user. Both types of languages are widely used in
 bioinformatics. While compiled languages are generally more difficult to learn
 and time-consuming to use than their counterparts, the 
-programs usually run faster because the code is translated in advance,
-making compiled languages suited for processing large
-datasets or performing complex calculations. Interpreted languages are
-easier to learn and use, especially for beginners, and for processing 
+programs usually run faster because the code is translated in advance.
+This makes compiled languages more suitable for processing large
+datasets or performing complex or repetitive calculations. Interpreted languages are
+easier to learn and use, especially for beginners; for processing 
 small datasets or relatively simple
-tasks, the difference in speed is negligible. 
+tasks, the difference in execution speed is negligible, while the advantage
+in development time can be significant.
 
 Biologists with no programming experience should consider using a widely-used 
 interpreted language such as Python or Perl.
@@ -579,42 +583,43 @@ Both languages have a large user-based community, reference materials, and
 high-quality third-party libraries.
 While academia in particular has a culture of 
 developing tools from scratch even when alternatives are available, this practice
-is outdated because pipelines are too complex for a single novice programmer 
+is increasingly challenging because pipelines are now too complex for a single novice programmer 
 to develop quickly and accurately\cite{Wilson2006}. Third-party libraries are developed 
-by programmers other than the developers of the language itself that extend the language
+by programmers other than the developers of the language itself, and extend the language
 with custom written functions.  For example,   
 biologists who want to develop a bioinformatics web application 
-can use Django, a Python third-party library that already contains most of the required 
-code.  The use of libraries is encouraged because they
+can use Django, a Python third-party library that already contains most of the
+code required to build a Web application.  The use of libraries is encouraged because they
 reduce errors in a program (i.e.\ a new programmer need not 
 develop code that is susceptible to bugs when
 polished, well-tested code is already available). It also reduces program size, 
 which increases maintainability (the programmer's ability to fix 
-bugs and update code as upgrades to software and scientific theories
+bugs and update code as upgrades to software and scientific methods
 become available).
-Most libraries are actively maintained, developed, and used
+Many libraries are actively maintained, developed, and used
 by a community of programmers and scientists; therefore, they are well-tested
-and fairly reliable. Many libraries also provide intensive tutorials, online
-webboards, listserves, etc.\ to support users. 
+and fairly reliable. Many libraries also support users via tutorials, online
+web forums, and mailing lists.
 
 
 \subsection{Good programming practices}
 
-Just as biologists follow safety practices in the wet lab, they
-must also follow computational lab safety practices when writing code.
-For example, biologists frequently write a short script to perform a 
-simple task. When writing the script, the 
+Just as biologists follow standard lab practices in the wet lab, they
+should follow standard computational practices when writing code.
+For example, biologists frequently write short scripts to perform
+simple tasks. While writing a script, the 
 meaning of each command and program logic 
-is easy to understand.  However, after a month or two, it is 
-nontrivial to determine the code function, inputs, etc.
-Furthermore, various versions of the scripts are frequently scattered 
-over the local file directory. This problem is akin to a biologist performing a
-quick procedure at the bench, writing scant notes, and not cleaning up. 
+is easy to understand.  However, after a month or two, it can be
+nontrivial to determine the code function, inputs, etc. that were once
+so clear.
+Furthermore, as scripts change over time, multiple versions of each script may be scattered 
+over multiple computers. This problem is akin to a biologist performing a
+quick procedure at the bench, writing scant notes, and not taking the time to a clean up or write down the procedure in detail.
 
 In this section, we discuss basic programming
-practices that help novice programmers organize their code and make their
-scripts more reusable for other projects. We also introduce version control 
-systems that facilitate
+practices that help programmers organize their code and make their
+scripts more reusable for other projects. We also introduce a type of
+software, version control software, that facilitates
 distribution of code among collaborators.
 
 
@@ -624,12 +629,12 @@ The main purpose is to inform users about code function, expected input
 and output, and usage details, which are collectively called
 a code description. This is
 similar to laboratory equipment being packaged with standard operating
-procedures and troubleshooting guides that biologists study when they are 
-being trained on the equipment.  The programmer must remember that just as the
+procedures and troubleshooting guides that are available to biologists
+using the equipment.  The programmer should remember that just as the
 wet-lab biologist will be more interested in using an instrument to do an
-experiment than opening the control panel and tracing circuits, so will the
-biologist be focused on using a program to process data rather than reading
-source code, and must write the documentation accordingly. 
+experiment than opening the control panel and tracing circuits, so will users
+be focused on using a program to process data rather than reading
+source code, and should write the documentation accordingly. 
 
 Professional programmers conventionally write a code description at the
 beginning of each short program.  Code descriptions should be short, 
@@ -638,13 +643,13 @@ minimum of words.  For simple scripts, this may be two lines: one for the
 description and one to describe the usage.  Some people might include the
 name of the author, date created, and date modified in the code description;
 however, when using a version control system (introduced later in this
-section), this practice becomes redundant.  
+section), this practice is redundant.  
 
-When biologists graduate to bundling scripts, programs, and libraries together,
-they will also need a README file, which is a text file containing
+When beginning programmers graduate to bundling scripts, programs, and libraries together,
+they should add a README file, which is a text file containing
 documentation for the entire code repository. The file usually includes
 the name of the author, contributors,
-installation, usage, and licenses for all programs in the repository.  
+installation, usage, and licenses for all programs in the repository.
 
 Code readability is important.  
 Experienced programmers customarily use two practices to improve readability:
@@ -653,21 +658,20 @@ For example, a new programmer might write the following code and comment
 (comment shown in italics):\\* \\*
 \texttt{x += 1  \emph{\# add 1 to x}}\\
 
+\noindent
 Readers with minimal knowledge of Python will recognize that 1 is added
 to a variable \emph{x}. The comment does not provide any information about the purpose
 of the statement or describe \emph{x}. Instead, the code should be commented like this:\\* \\*
-\texttt{x += 1  \emph{\# increase the number of DNA sequences read from the
-input fasta file by one}}\\
+\texttt{x += 1  \emph{\# increase the count of DNA sequences read in}}\\
 
 This way, a reader will quickly understand that \emph{x} is the number of DNA
 sequences read and the number is being incremented by one.  A more useful way
 to write this statement is:\\* \\*
-\texttt{number\_of\_dna\_seqs\_read += 1
-\emph{\# increase the number of DNA sequences read from the input fasta file
-by one}}\\
+\texttt{sequence\_count += 1 \emph{\# increase the number of DNA sequences read by one}}\\
 
+\noindent
 After choosing a more descriptive variable name, the comment is now largely
-redundant and can be omitted. 
+redundant and could even be omitted. 
 This is a simple example of how code readability can be improved 
 by choosing appropriate variable names and commenting code sparingly.
 
@@ -675,41 +679,40 @@ by choosing appropriate variable names and commenting code sparingly.
 
 A common change tracking nightmare 
 is when a programmer creates a script 
-and sends a copy to Collaborator A. After a period of time, 
-Collaborator A finds a bug in the first version of the script and informs
+and sends a copy to a collaborator, who we'll call Adam. After a period of time, 
+Adam finds a bug in the first version of the script and informs
 the author. The author fixes the bug and sends Version 2
-to Collaborator A, not knowing that Collaborator A 
-previously sent Version 1 to Collaborators B and C, who are not privy to Version 2 
+to Adam, not knowing that Adam
+previously sent Version 1 to other collaborators, Beth and Celia, who are not privy to Version 2 
 and therefore are likely to have unknowingly generated erroneous results with it.  
-Further, Collaborator A may inadvertently confuse Version 1
+Further, Adam may inadvertently confuse Version 1
 with Version 2 because the script name is the same for both and
-the only difference is in the code, which Collaborator A cannot read. Later, 
-Collaborator B with Version 1 might try to compare
-results on a similar dataset with Collaborator A's results from Version 2,
-spending considerable time tracking down perceived scientific differences, 
-resulting in at best a re-discovery of the bug and at
-worst attempts to publish the erroneous comparison in a journal.  The author, 
-who has upgraded to Version 5, 
+the only difference is in the code, which Adam cannot or does not read. Later, 
+Beth (with Version 1) might try to compare
+results on a similar dataset with Adam's results from Version 2,
+and spend considerable time tracking down the reason for the differences.
+This would result in (at best) a re-discovery of the bug and (at
+worst) attempts to publish the erroneous comparison in a journal.  The author, 
+who has meanwhile upgraded to Version 5, 
 is unaware of anything except that 
-Collaborator A was sent Version 2 a long time ago.  This convoluted 
-comedy of errors is the reason why version control is needed to track changes to 
-scripts and distribute them to all collaborators.
+Adam was sent Version 2 a long time ago.  This convoluted 
+comedy of errors is one reason why a technique known as version control is essential in collaborations.
 
 A version control system
 (VCS) is a program that tracks changes made to a file or set of files in a specified
 directory and records them on a central server. Users can add, remove,
 or edit files and the version control program will compare each file
-with the previous version and record all changes made. For a single programmer,
-a VCS can be a rigorous, efficient electronic notebook.  As the programmer
+with the previous version and record the differences. For a single programmer,
+a VCS can be a rigorous, efficient electronic notebook of changes to a program:  As the programmer
 creates/updates scripts, with a simple command, each change is meticulously
 recorded, dated, and archived.  For a team of programmers, a VCS
-is a group notebook and distribution tool.  Each programmer can access the
+is a group notebook, distribution tool, and collaboration aid.  Each programmer can access the
 latest version of the code and make changes.  If multiple changes are made by
-different programmers to the same file(s), the changes are merged together 
-upon submission to the central server. Conflicts (two
-programmers modify the same line of code) are flagged for manual resolution.  
+different programmers to the same file(s), the changes are noted and automatically
+merged if possible. Conflicts (in which two
+programmers modify the same line or region of code) are flagged for manual resolution.  
 For nonprogrammers, a VCS is a
-useful means of obtaining up-to-date software tools.  Users can download code
+useful means of obtaining up-to-date software tools, as the VCS usually contains the most recently updated version of the software.  Users can download code
 from the VCS and know exactly which version they are downloading.
 
 \textsl{Note: VCSs are also commonly used when collaborators are writing 
@@ -721,7 +724,7 @@ printouts.}
 
 This is particularly useful when a research lab has one programmer 
 and multiple users because the programmer can create/edit scripts in
-the VCS and then users can check the same VCS to determine if they need to
+the VCS and then users can check that VCS to determine if they need to
 download new/updated tools.  When publishing 
 computational analyses, study
 authors can note the version numbers of the scripts used so biologists
@@ -761,13 +764,13 @@ Some
 projects on Github are also linked to the lab repository
 \texttt{https://github.com/ged-lab}, which serves as the main repository for
 all source code and other materials written by lab members. 
-We include the main repository in all
-publications so anyone can download our source codes and materials
-for using or reproducing results without contacting us. 
+We include a link to the main repository in each
+publication so anyone can download our source codes and materials
+for using or reproducing results without first contacting us. 
 In addition, anyone who finds a bug or wants to contribute to
 the project can do so by simply cloning the project, editing or adding code
 and submitting a request to merge a change to the project.
-This opens an opportunity for improving the quality of scientific software
+This opens up opportunities for improving the quality of scientific software
 as well as collaboration.
 This method has been proven quite successful in the open-source community.
 
@@ -775,7 +778,7 @@ This method has been proven quite successful in the open-source community.
 
 Roughly one to ten programming errors occur 
 per thousand lines of code\cite{Boehm2005,Ince2012}.  
-In this section, we discuss techniques to help
+In this section, we discuss two techniques to help
 programmers find obvious bugs upfront: 
 assert statements and doctests. We introduce more advanced
 tools such as unit tests and automatic testing systems in the \emph{Related}
@@ -805,50 +808,58 @@ no G's or C's present, which is also expected to be a common case.  It is good
 programming practice to always test cases where zero is the expected result to
 ensure that it is correctly calculated and reported.  The third line tests if
 the function recognizes that it has been passed an empty sequence and correctly
-reports an error; \emph{None} is a defined value in Python. In
+reports an error; \emph{None} is a defined value in Python that indicates ``no result''. In
 Python, a programmer can also specify an error message if an assert statement
 fails:\\* \\*
-\texttt{assert count\_gc("") == None, "Empty sequence, must return ValueError"}\\*
+\texttt{assert count\_gc("") == None, "Empty sequence, should return None"}\\*
 
 In this case, if the function does not return \emph{None}, the assert statement
-fails and prints "Empty sequence, must return ValueError" on the computer
+fails and prints "Empty sequence, must return None" on the computer
 screen.
 This error message alerts the programmer that the \emph{count\_gc} function
 is not handling the case correctly.  
+% @CTB I would go with the correct answer being 0 here, FYI.  frac_gc might
+% be a better example where a 0-length sequence should trigger an error. Thoughts?
 
 Theoretically, assert statements should check all possible input
-values; however, this is not practical. In the above example, it
+values; however, this is not usually practical. In the above example, it
 would be impossible to generate every possible sequence that a user may
 input to the function.  Therefore, a programmer will usually design
 a representative set of input data to systematically test the code.  The
 previous example demonstrated this by testing 
-from common to uncommon cases.  The more assert statements
+both common and uncommon cases.  The more assert statements
 added, the more likely an existing error will be found.  
 
 \textsl{Note: assert
 statements are also useful 
-when the programmer is upgrading the code later.
-A good programmer is not afraid to modify code and add features because the
-tests ensure that changes that break the existing code will almost always
-be discovered immediately.}
+when the programmer is modifying the code later.
+Well-tested programs can more easily be modified and extended because the
+tests ensure that changes that break the existing code are more likely to
+be immediately discovered.}
 
 \item Doctest
 
 Doctest is a useful feature in Python and several other languages that helps the 
 programmer document
-and test his/her code simultaneously. Basically, doctest compares output
+and test his/her code simultaneously. This is particularly useful when writing
+documentation for developers planning to use or extend functions, because
+the doctests can ensure that the documentation examples are correct.
+ Basically, doctest compares output
 from the Python interpreter with user-defined output. The test fails if they do
 not match. The doctest for the previous function would look like this:\\*\\*
 
 \texttt{>>>count\_gc("ATGTC") \\2}\\*
 \texttt{>>>count\_gc("ATTTTA") \\0}\\*
-\texttt{>>>count\_gc("")\\ValueError}\\*
+\texttt{>>>count\_gc("")\\None}\\*
 
 \end{itemize}
 
-Effective testing catches errors. However, the human programmer will
-rarely consider and write tests for all possible ways of breaking code when
-he/she is developing the first version of a program; bugs are inevitable.
+% @CTB should we separate with some kind of ``discussion'' or ``testing'' headline?
+
+Effective testing catches errors. However, the human programmer can almost
+never consider and write tests for all possible ways of breaking code when
+she is developing the first version of a program; bugs are not only inevitable
+but unfortunately very common.
 Therefore, writing tests should be incremental; each newly discovered bug
 should prompt the addition of a new test.
 
@@ -858,20 +869,22 @@ undergraduate computer science courses and therefore many programmers, let
 alone biologists, lack the required knowledge or experience.  Another reason is
 because it is time-consuming and not considered a critical path activity\cite{Segal2007,Kelly2008}.
 Rigorous tests may contain more lines of code than the actual code. 
-However, the software industry has proven that 
+However, there is some evidence that
 programmers who write tests 
 spend less time debugging and produce higher quality code.
+% @CTB cite ... crumb, who is it... one of the Wilson anthologies... @@CTB
 Moreover, time spent repeating an analysis because of a bug is usually far
 costlier than time spent writing tests.
 
 For many biologists, the guidelines introduced in the Beginner and Intermediate
 sections are sufficient to build a strong foundation for reproducible
-computational research.  Beginners will be ready to investigate the tutorials
+computational research.  Beginners should be ready to investigate the tutorials
 and resources listed at the end of the chapter to build knowledge and
 experience with the command line interface: the new benchtop with open access,
 high-quality UNIX tools for data processing (without programming), simple bash
 scripts to generate reproducible procedures and optimize parameters, and text
-editors/IDEs to create and manipulate files across platforms.  Intermediates
+editors/IDEs to create and manipulate files across platforms.  Intermediate
+users
 will be able to investigate various programming languages to find the one with
 the most high-quality libraries and support for their research area, document
 their code so it can be easily read and understood by other researchers, use a
@@ -905,8 +918,7 @@ in the lab vs.\ chemical engineers scaling up a reaction to run in a chemical
 plant; process and resource management become significantly more important.  As in the
 previous sections, these practices facilitate reproducibility,
 productivity, and frequently help maintain the programmer's sanity.  In this
-section, we will discuss modularity or the practice of breaking large blocks of
-code into smaller modules, refactoring/optimizing code performance for use with
+section, we will discuss modularity (the practice of writing code in small blocks), refactoring/optimizing code performance for use with
 modern huge datasets, and using the IPython notebook as an interactive
 notebook/computing environment for integrating different programs and platforms
 and performing a complex analysis from start to finish.
@@ -918,15 +930,15 @@ programmers have a complete set of specs from the customer
 and can design an elegant software solution before they begin
 coding.  In the bioinformatics lab, programmers frequently have only a piece of
 the problem laid before them and minimal input from lab members.  
-Experienced bioinformaticians will quickly
-develop a program that reads input, performs a calculation, and writes
+Bioinformaticians need to quickly
+develop a program that reads in data, performs a calculation, and writes
 results so lab members will react to the results, try to validate them, mention
 specifications/expectations that were not stated initially, or
 rethink the problem.  The programmer is then
 expected to refine the program and show new results to
 solicit more feedback iteratively. 
 
-Productivity is the key to using this evolutionary process.  
+Productivity is the key to using this evolutionary approach to problem solving.  
 Writing robust, reusable, and maintainable code is traded for
 writing code quickly because the programmer assumes that most code will be
 modified or discarded during the development process.  Therefore,
@@ -945,7 +957,7 @@ The first good practice for writing high-quality large programs is to divide
 code into small modules.  A module is generally a small block of code that
 performs one specific task such as reading FASTA files, ensuring that a DNA
 sequence contains only the characters A, C, G, and T, or calculating the
-average of a set of numbers.  The short scripts produced by Intermediate
+average of a set of numbers.  The short scripts produced by intermediate
 biologists/bioinformaticians can easily be converted into modules; experienced
 software developers frequently write scripts that are simultaneously both.  
 The purpose of creating modules is to take
@@ -960,7 +972,7 @@ of modules or library functions.
 There are several additional advantages to this practice:  
 \begin{enumerate}
 
-\item Simplify and speed programming.  For example, a program may need to read
+\item Simplify and speed up programming.  For example, a program may need to read
 several FASTA files to function.  In a linear program, the
 code to load a file would need to be copied and pasted several times,
 which decreases the readability of the code.  If the program is modular, the
@@ -968,14 +980,17 @@ programmer need only create one module in the library and then reference it as
 many times as needed in the main program.  
 
 \item Library modules are easier to maintain.  
-In the linear program example, if a bug is found when
+In a long, linear program that reads multiple files, if a bug is found when
 reading the first FASTA file, then the error is likely to be in all instances
 of the code.  Novice programmers frequently only fix those
 instances where an obvious error is shown, leaving silent errors in other parts
 of the program.  In the modular example, the bug is fixed once in the module.  
 Similarly, the module need only be
-tested once whereas good testing of a linear program would require that each
-instance of the code be tested.  
+tested once whereas good testing of a linear program would require many more
+tests.
+
+% @CTB not a big fan ``linear'', but not sure how to convey otherwise. I'll
+% think on't.
 
 \item Modules are
 easier to reuse for other projects.  Once a programmer has written and tested a
@@ -1000,8 +1015,8 @@ program when each of them is writing/testing different modules.
 
 Refactoring is the process of changing a program so the code is different but
 the results are same.  This is similar to changing a wet-lab procedure  
-so it uses fewer consumables, less toxic chemicals, and less time while still
-generating a product that is of similar or higher quality.  Once a programmer has a
+so it uses fewer consumables, less dangerous chemicals, and less time while still
+generating a result that is of similar quality.  Once a programmer has a
 well-tested program that produces the desired results, he/she can refactor the
 code so it is more readable and simpler, with emphasis on the readability.
 Before beginning, test codes should be written to ensure that the code still
@@ -1033,7 +1048,7 @@ resources are not wasted on useless processing.
 
 As mentioned previously, interpreted
 languages are often used to develop bioinformatics software because they
-reduce development time and errors with the acceptable tradeoff that they are
+reduce development time with the acceptable tradeoff that they are
 slower than compiled languages. In some cases, however, performance is critical
 and the program may be considered useless if it cannot achieve a particular
 speed.  
@@ -1053,24 +1068,23 @@ cProfile, and pstats module for Python.
 
 \textsl{Note: some common bottlenecks in bioinformatics programs involve 
 loading data multiple times, unnecessary reading/writing data to disk, 
-and inefficient searching using nested loops and can be opened 
+and inefficient searching using nested loops.  These can often be solved 
 by using more efficient algorithms or data structures.  
 Novice programmers are prone to writing algorithms that 
 mimic how a human would perform a task instead of 
 harnessing the abilities of the computer 
-and the specific programming language.}
+and the specific programming language.  Consultation with other bioinformaticians or with an online forum is a good path to improving the efficiency of your code.}
 
 Optimization depends on the
 languages being used. For a bioinformatics program written in Perl or Python, a
 bottleneck function can be rewritten in a compiled language like C++ or
-Fortran, and then wrapped so the interpreted language can use it.  This method is
-known to increase performance by several magnitudes,
+Fortran, and then wrapped so the interpreted language can use it.  This method can increase performance by several magnitudes,
 although poorly written code in a compiled language may not function as well as
 well-written code in a scripting language.  Experienced
 biologists/bioinformaticians utilize data structures and libraries that are
 built into the scripting and compiled languages, which have been optimized by
 professional software developers.  For example, in Python, many built-in data
-structures and functions are actually implemented in C or C++ and wrapped so
+structures and functions are actually implemented in C and wrapped so
 they can be called using Python code.  A biologist/bioinformatician need only 
 find an appropriate method that has already
 been optimized and implemented in a compiled language.  
@@ -1092,11 +1106,11 @@ the process, allowing researchers to conduct computational analyses while
 simultaneously building the final set of instructions. 
 In this section, we introduce the IPython notebook, which has become
 popular due to its support of Python, shell commands, and R (a
-statistics and graphing program). 
+statistics and graphing language). 
  
 \subsubsection{IPython notebook}
 
-IPython notebook is an
+IPython notebook is a combined
 electronic notebook and programming/computing environment.  
 Users can create a notebook for a project and link all scripts,
 programs, and shell commands, and parameters used to the notebook, including
@@ -1157,6 +1171,7 @@ create their own plugins to extend its functionality.
 
 \paragraph{Real World Example}
 
+% @CTB do you mean first author of THIS manuscript or THAT manuscript?
 In a recent manuscript, the first author (C. Titus Brown, MSU) completed parts
 of the analysis in the IPython notebook, available at
 \texttt{https://github.com/ged-lab/2012-paper-diginorm.git}. The author also
@@ -1170,12 +1185,12 @@ analysis from start to finish with identical results with minimal effort.
 
 At the NIH Cloud Computing for the Microbiome workshop in 2012, a 
 team of researchers from different backgrounds used IPython notebook 
-and Amazon EC2 to produce publishable results in record time\cite{RaganKelley2012}.
+and Amazon EC2 as a collaboration to quickly produce publishable results time\cite{RaganKelley2012}.
 
 \section{Related Topics}
 
-For those biologists/bioinformaticians who have progressed through the Beginner
-to Advanced sections, we briefly describe advanced computer science topics 
+For biologists/bioinformaticians who have progressed through the Beginner
+to Advanced sections, we briefly describe more advanced computing topics 
 that can facilitate accurate, efficient computational research.
 
 \subsection{Advanced tools}
@@ -1192,7 +1207,7 @@ syntax for defining a specific pattern, which to the casual eye can look like
 an unintuitive shell language. For example, \texttt{logy\textbackslash{}b} defines a pattern for a word
 that ends with \emph{logy}, matching biology, physiology, technology, etc.
 In programming, regular expressions are
-used to write concise code and improve speed. 
+used to concisely and quickly search for patterns in data.
 
 \subsubsection{Debugger}
 
@@ -1203,8 +1218,8 @@ The debugger tool allows programmers to interact with their program such as
 running, pausing, stepping in and out of functions or loops, and changing values
 in variables during execution to locate a bug.
 Most programming languages have at least one debugger.
-GDB is the standard GNU/Linux debugger that can be used with most
-common programming languages.
+GDB is a standard GNU/Linux debugger that can be used with most
+compiled programming languages.
 Moreover, major IDEs such as Eclipse and Netbeans have built-in debuggers
 with GUIs. 
 
@@ -1231,7 +1246,7 @@ program.
 In our lab,
 large programming projects have separate folders for test code. However, each project uses
 different libraries for testing; for example, Gimme
-(\texttt{https://github.com/likit/gimme}) uses a Python unittest module whereas Khmer
+(\texttt{https://github.com/likit/gimme}) uses a Python unittest module whereas khmer
 (\texttt{http://github.com/ged-lab/khmer.git}) uses user-defined functions, which are
 recognized and run by the nosetest module. Instructions for automatically
 running tests are included in the corresponding README
@@ -1278,8 +1293,8 @@ processing and precise floating point calculations.
 
 The general problem in the
 bioinformatics field is not an absence of tools and good practices, but rather
-that many researchers lack knowledge and training with them\cite{Merali2010}.  With a scientific
-culture that is relatively naive about computational lab safety practices, 
+that many researchers lack knowledge and training with them\cite{Merali2010}.  Embedded in a scientific
+culture that is relatively inexperienced about good computational practices, 
 many biologists make their
 first foray into bioinformatics with only intuition and the Internet to guide
 them.  The tools and practices discussed here are intended to help
@@ -1296,7 +1311,7 @@ Investing in learning computational tools and practices will yield incalculable
 return over the course of a biologist's career.  With the enormous potential
 for discovery available in this era of Big Data, datasets can be expected to
 continue expanding.  A biologist who starts learning and applying general tools
-and good computing practices now will eventually save \emph{years} of lab time.
+and good computing practices now will eventually save \emph{years} of time.
 Moreover, the biologist who invests time in writing tests, using version
 control, and automating/distributing analyses in the IPython notebook will both
 be compliant with journal and granting agency policies for distributing code
