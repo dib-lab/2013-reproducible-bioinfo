@@ -641,9 +641,9 @@ quick procedure at the bench, writing scant notes, and not taking the time to a 
 
 In this section, we discuss basic programming
 practices that help programmers organize their code and make their
-scripts more reusable for other projects. We also introduce a type of
-software, version control software, that facilitates
-distribution of code among collaborators.
+scripts more reusable for other projects. We also introduce 
+version control software, which facilitates
+code distribution among collaborators.
 
 
 \subsubsection{Code documentation} 
@@ -726,7 +726,8 @@ A version control system
 directory and records them on a central server. Users can add, remove,
 or edit files and the version control program will compare each file
 with the previous version and record the differences. For a single programmer,
-a VCS can be a rigorous, efficient electronic notebook of changes to a program:  As the programmer
+a VCS can be a rigorous, efficient electronic notebook of changes to a program:  
+as the programmer
 creates/updates scripts, with a simple command, each change is meticulously
 recorded, dated, and archived.  For a team of programmers, a VCS
 is a group notebook, distribution tool, and collaboration aid.  Each programmer can access the
@@ -789,10 +790,10 @@ projects on Github are also linked to the lab repository
 \texttt{https://github.com/ged-lab}, which serves as the main repository for
 all source code and other materials written by lab members. 
 We include a link to the main repository in each
-publication so anyone can download our source codes and materials
+publication so anyone can download our source code and materials
 for using or reproducing results without first contacting us. 
 In addition, anyone who finds a bug or wants to contribute to
-the project can do so by simply cloning the project, editing or adding code
+the project can do so by simply cloning the project, editing or adding code,
 and submitting a request to merge a change to the project.
 This opens up opportunities for improving the quality of scientific software
 as well as collaboration.
@@ -857,7 +858,7 @@ added, the more likely an existing error will be found.
 \textsl{Note: assert
 statements are also useful 
 when the programmer is modifying the code later.
-Well-tested programs can more easily be modified and extended because the
+Well-tested programs can be more easily modified and extended because the
 tests ensure that changes that break the existing code are more likely to
 be immediately discovered.}
 
@@ -882,8 +883,8 @@ not match. The doctest for the previous function would look like this:\\*\\*
 
 Effective testing catches errors. However, the human programmer can almost
 never consider and write tests for all possible ways of breaking code when
-she is developing the first version of a program; bugs are not only inevitable
-but unfortunately very common.
+he/she is developing the first version of a program; bugs are both inevitable
+and common.
 Therefore, writing tests should be incremental; each newly discovered bug
 should prompt the addition of a new test.
 
@@ -943,7 +944,8 @@ in the lab vs.\ chemical engineers scaling up a reaction to run in a chemical
 plant; process and resource management become significantly more important.  As in the
 previous sections, these practices facilitate reproducibility,
 productivity, and frequently help maintain the programmer's sanity.  In this
-section, we will discuss modularity (the practice of writing code in small blocks), refactoring/optimizing code performance for use with
+section, we will discuss modularity (the practice of writing code in small blocks), 
+refactoring/optimizing code performance for use with
 modern huge datasets, and using the IPython notebook as an interactive
 notebook/computing environment for integrating different programs and platforms
 and performing a complex analysis from start to finish.
@@ -1041,7 +1043,7 @@ program when each of them is writing/testing different modules.
 Refactoring is the process of changing a program so the code is different but
 the results are same.  This is similar to changing a wet-lab procedure  
 so it uses fewer consumables, less dangerous chemicals, and less time while still
-generating a result that is of similar quality.  Once a programmer has a
+generating a result of similar quality.  Once a programmer has a
 well-tested program that produces the desired results, he/she can refactor the
 code so it is more readable and simpler, with emphasis on the readability.
 Before beginning, test codes should be written to ensure that the code still
