@@ -100,9 +100,13 @@ the spreadsheets and single software packages of the early post-genomic era.
 Modern computational analyses are a major part of biological studies \cite{Zhulin2009}
 and require analyzing gigabytes or terabytes of data in complex computational
 pipelines, which typically involve running several distinct programs with custom
-scripts porting data between them.  These pipelines start from quality control on raw data (or by downloading primary data from public databases) and pass the data through many steps of calculation, validation, statistics.  They end with
+scripts porting data between them.  These pipelines start from quality control of 
+raw data (or by downloading primary data from public databases) and pass the data 
+through many steps of calculation, validation, and statistics.  They end with
 summarization and graphical vizualization to aid end-users in comprehending the
-complex results.
+complex results.  In short, modern biological studies require 
+datasets that are so large, scientists must use advanced computational tools to 
+perform useful analyses.
 
 Genomics has expanded the drivers of science from hypothesis (devise a question 
 and design/conduct experiments in response) to include discovery (sifting through large datasets in search of patterns).  With this greater emphasis on 
@@ -118,6 +122,8 @@ they often have minimal experience with computational
 practice and lack the knowledge necessary to 
 efficiently perform high-quality reproducible 
 computational research\cite{Merali2010,Segal2007}.
+Effectively, many biologists lack the computational skills they need to perform 
+modern biological studies.
 
 \subsection{Concerns in Bioinformatic research}
 
@@ -132,9 +138,7 @@ biology to trained bioinformaticians and computer scientists,
 this is impractical for two reasons:
 not enough skilled bioinformaticians are available (only a minuscule percentage
 of US universities have bioinformatics undergraduate programs), and many
-computer scientists are uninterested/uneducated in science or unwilling to pursue careers
-that pay considerably less than a commercial position.  Moreover, the
-% @CTB citation for pay/disinterest?
+computer scientists are uninterested/uneducated in science.  Moreover, the
 substantial background in biology required to make appropriate use of
 data blocks computer scientists from quickly moving into bioinformatics.
 As a result,
@@ -149,7 +153,7 @@ because many labs and programs do not consider bioinformatics
 essential for their biologists\cite{Segal2007}.  A researcher seeking to analyze large datasets 
 when few or none of his/her coworkers or superiors have
 computational expertise may have no clue where to begin, and be given very little
-time to find or develop appropriate tools.  This situation fosters an ad hoc
+time to find or develop appropriate tools.  This situation fosters a dangerously ad hoc
 approach to bioinformatics.    
 
 The effects of this lack of expertise can be dire:  
@@ -167,7 +171,7 @@ potentially requiring retraction of papers when the errors are caught\cite{Meral
 
 \item Many tools only run on the command line, are difficult to install, lack
 documentation, etc., and therefore software may be selected based on ease
-of use, rather than accuracy and scientific relevance
+of use, rather than accuracy and scientific relevance.
 
 \item With the trial and error
 approach used to create custom pipelines, biologists can
@@ -253,7 +257,8 @@ on the command line and selecting a text editor.
 
 Just as much wet-lab biology work is done on a lab bench with routinely available tools
 such as micropipets, shakers, and spectroscopes, computational work
-is usually performed on a computer with routinely available data parsing and analysis tools.  In this section, we will discuss computing environments (also
+is usually performed on a computer with routinely available data parsing and analysis tools.  
+In this section, we will discuss computing environments (also
 sometimes called operating systems or platforms) and the general tools that
 stand ready on the computational benchtop.  
 
@@ -267,7 +272,7 @@ In the United States, most people
 learn basic computer skills on Windows machines.  
 However, developers of bioinformatics
 software primarily use \unix{} systems because of the large existing ecosystem
-of tools, most of which are open source -- this means anyone can freely use, modify, and
+of tools, most of which are open source -- meaning that anyone can freely use, modify, and
 redistribute resources under open-source licenses.  The open-source or 
 free-software community has long attracted programmers and other 
 technically-oriented people who creatively solve problems.
@@ -277,7 +282,7 @@ tools, libraries, licenses, and applications for the GNU/Linux system.
 Consequently, biologists can get an operating system and all the bioinformatics
 tools they need for free for all of their computers and clusters.  
 Further, \unix{} systems have traditionally been easier to use remotely than Windows
-machines,
+machines, whether
 the machine is a desktop computer 
 in another room, an institution's high performance compute cluster, or 
 the cloud.
@@ -301,7 +306,7 @@ the command line (such as Taverna, Pipeline Pilot, and Galaxy).
 Further, most
 cutting-edge bioinformatics tools lack a GUI,
 partly because building GUIs is a time-consuming task that is
-difficult to fund.  As a result of this, biologists need
+difficult to fund.  As a result, biologists need
 basic command line navigation skills to use the latest bioinformatics software.  Biologists
 who use Windows but wish to take advantage of this cache of software and tools
 can download and install a free program such as Cygwin (or MSYS+Mingw32 or 
@@ -318,10 +323,10 @@ Just as wet-lab biologists use simple tools like pipets, centrifuges,
 incubators, and gel boxes individually and then combine them to perform a
 specific procedure, so bioinformaticians use simple \unix{} tools
 that each perform a specific task and string them together into a pipeline.
-Many \unix{} tools come pre-installed in \unix{} systems or are freely
+Many \unix{} tools come pre-installed on \unix{} systems or are freely
 available online. These tools are invaluable for the beginning
 bioinformatician, particularly if that researcher has no programming experience, 
-because they will perform tasks with a speed, customizability, and
+because they will perform tasks with speed, customizability, and
 reliability that custom scripts cannot easily match.  Here, we
 introduce some of the most basic, useful \unix{} tools for bioinformatics.
 
@@ -329,11 +334,11 @@ introduce some of the most basic, useful \unix{} tools for bioinformatics.
 
 The shell is a language as well as interpreter that reads and interprets commands
 from a user. Any biologist who has opened a terminal or command line interface
-and typed a command has used the shell. There are several types of shells available for \unix{}
-system, but bash is predominant. 
+and typed a command has used the shell. There are several types of shells available 
+for \unix{}, but bash is predominant. 
 Bioinformaticians often use shell commands to
 run tools and automate tasks such as running pipelines, backing up
-data and submitting jobs on a computer cluster. While shell languages can be
+data, and submitting jobs on a computer cluster. While shell languages can be
 used to develop full-fledged programs, this can be time-consuming 
 because the shell is designed around operating system tasks rather than
 data analysis.
@@ -349,7 +354,7 @@ some of the most general and useful tools on
 
 \emph{grep, sed, cut,} and \emph{awk} are tools for parsing text files.
 \emph{grep} is used to
-quickly search through a  text file for a given word or sequence
+quickly search through a text file for a given word or sequence
 motif, similar to using a \emph{find all} command in a word processor.  \emph{sed} is
 useful for replacing words or phrases,
 similar to using the \emph{find and replace} command in a word processor.
@@ -369,7 +374,7 @@ syntax (covered in the Related section), which offers more robust pattern search
 is a program that
 displays a list of programs related to a keyword. It is
 useful for biologists who need to find a tool to perform a specific function without 
-knowing the program's name. For example, if a biologist wanted to archive files,
+knowing the tool's name. For example, if a biologist wanted to archive files,
 he/she might use the \emph{apropos} command to search for an appropriate tool:\\* \\*
 \texttt{\$ apropos archive}\\*
 
@@ -468,6 +473,7 @@ used and referred to in later analyses.
 
 
 % @CTB what are these ` things? They show up incorrectly in the text, right?
+% @ABP ` is beginning single quote.  Latex always interprets the single quote char as the ending quote.  Check out the text.  
 Example bash script \emph{alignMyRnaSeqData.sh}\\* \\*
 \texttt{\#! /bin/bash}\\*
 \texttt{dataName=`DataSet001'}\\*
@@ -498,8 +504,7 @@ academic researchers who are trying to solve a specific problem and optimize
 the parameters to that particular system.  These default parameter sets are
 usually untested with other types of data unless the software
 has an active community of users who
-have found many of the problems.  Therefore, biologists using new
-software should start by running a dataset with a known result (a control) on
+have found many of the problems.  Therefore, biologists using new software should start by running a dataset with a known result (a control) on
 the default parameters, and then vary the parameters one by one to determine
 their sensitivity.  (When possible, the parameters should be looked up in the
 documentation and through Internet searches to determine whether they are set
@@ -508,26 +513,24 @@ for testing parameter sets because biologists can set default parameters, run
 the script, change one parameter, and run the script again, confident that the
 only change to the procedure is the one they deliberately made.  In the
 previous example, a biologist would vary the parameters listed in the params
-variable for each run.  The results are more comparable and reproducible, and
-automating the procedure speeds up the parameter optimization process.
+variable for each run.  The results are more comparable and reproducible, and automating the procedure speeds up the parameter optimization process.
 
 \subsubsection{Text editors and IDEs -- the bioinformaticians' word processors}
 
 Text editors are 
-similar to word processors in that they are used to open,
-create/modify, and save text files and source code, but different because they
+similar to word processors in that they are used to open, create/modify, and save text files and source code, but different because they
 do not save formatting characters or binary information in the file.
 Therefore, they produce the clean, simple files that are needed for running programs
 and analyzing data.  There are many freely available editors with features such
-as graphical interfaces, programming language-specific syntax
+as graphical user interfaces, programming language-specific syntax
 highlighting, and advanced text parsing commands. 
 We recommend that biologists learn cross-platform editors
 (i.e.\ can be used on Windows, \unix{} systems, etc.), particularly
 those biologists who use Windows machines locally and \unix{} systems
 remotely.
 
-Two editors are particularly popular among computational scientists: Emacs and vi (or vim).
-Both editors are cross-platform and have features that can increase productivity
+Two editors are particularly popular among computational scientists: Emacs and vi (or Vim).
+Both editors are cross-platform and have productivity-increasing features 
 such as macros that can automate tasks, regular expressions to 
 tailor/speed search and replace, etc.
 Emacs and vi can also be modified/customized using 
@@ -572,16 +575,17 @@ important for good computational lab practice.
 
 \subsection{Programming languages}
 
-A programming language is a set of human-readable instructions that is translated into
+Programming languages are sets of human-readable instructions that are translated into
 machine code to instruct a computer to perform a task.
 They are generally categorized as \emph{interpreted} and \emph{compiled}.
 Interpreted (scripting) languages (such as Python, Perl, R, and Ruby) use an
 interpreter program to run programs in one step, 
 when the user is executing the
 program. Compiled languages (such as C, C++, and Java)
-use a two-step approach; the first step, compilation, run 
-during code development, produces an executable file that
-contains only machine code. This file is then executed by the user. Both types of languages are widely used in
+use a two-step approach; the first step, compilation, runs 
+during code development, and produces an executable file that
+contains only machine code. This file is then executed by the user. 
+Both types of languages are widely used in
 bioinformatics. While compiled languages are generally more difficult to learn
 and time-consuming to use than their counterparts, the 
 programs usually run faster because the code is translated in advance.
@@ -600,7 +604,7 @@ Another widely used, more domain-specific language for data analysis is R.
 R is a language of choice for many statisticians and bioinformaticians because of
 built-in data structures that suitable for data analysis and a large number of
 libraries for complex statistical analyses and graphics.
-Biologists who work on high-througput data anaysis, such as Microarray and next-generation
+Biologists who work on high-throughput data analysis, such as microarrays and next-generation
 sequencing, may need to use libraries written in R or to run the analysis in R environments.
 Therefore, a knowledge of both R and Python or Perl languages is strongly encouraged.
 
@@ -637,7 +641,7 @@ nontrivial to determine the code function, inputs, etc. that were once
 so clear.
 Furthermore, as scripts change over time, multiple versions of each script may be scattered 
 over multiple computers. This problem is akin to a biologist performing a
-quick procedure at the bench, writing scant notes, and not taking the time to a clean up or write down the procedure in detail.
+quick procedure at the bench, and not taking the time to clean up or write down the procedure in detail.
 
 In this section, we discuss basic programming
 practices that help programmers organize their code and make their
