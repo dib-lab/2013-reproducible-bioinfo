@@ -10,6 +10,8 @@
 % @CTB and RStudio in the IPython Notebook section, sigh
 % @CTB mention online forum for THIS paper.
 
+\newcommand{\unix}{UNIX}
+
 \begin{document}
 
 \title{Dummy title} \author{Dummy author} \chapter*{Dummy chapter needed for
@@ -32,27 +34,43 @@ Microbiology \& Molecular Genetics, Michigan State University, East Lansing, MI}
 
 \subsection{Computational analysis in pre-genomic era}
 
-The birth of computational biology in the 1960s
-and 1970s brought key bioinformatic discoveries, but many analyses
-were conducted by examining entire datasets by eye and shuffling data by hand.
-Protein sequences and alignments were distributed in the annual printed Dayhoff
-atlases \cite{Strasser2010} that budding bioinformaticians 
-would manually type onto punch cards.  In the 1980s,
-the term ``bioinformatics'' was coined and the first major sequence databases
-were established, necessitating more automated and scalable computational analyses.
+%The birth of computational biology in the 1960s
+%and 1970s brought key bioinformatic discoveries, but many analyses
+%were conducted by examining entire datasets by eye and shuffling data by hand.
+%Protein sequences and alignments were distributed in the annual printed Dayhoff
+%atlases \cite{Strasser2010} that budding bioinformaticians 
+%would manually type onto punch cards.  In the 1980s,
+%the term ``bioinformatics'' was coined and the first major sequence databases
+%were established, necessitating more automated and scalable computational analyses.
+%
+%In the 1990s, protein and nucleic acid sequences were becoming plentiful
+%(distributed on CD-ROM), scientific software packages and spreadsheet programs
+%were affordable, several phage and bacterial genomes were sequenced, and the Human Genome Project (HGP) was initiated with Sanger
+%sequencing.  In 2003, the pre-genomic era ended with the publication of the human genome\cite{Lander2001,Collins2003,HGP}.  The National Institutes of %Health also
+%invested heavily in sequencing other organisms to aid in annotation of the 
+%human genome.  While complete genome
+%sequencing was possible, the methodology was expensive, laborious, and time-consuming,
+%spurring scientists to develop the next generation of sequencing technology.
+%In the mid-2000s, faster and cheaper
+%sequencing techniques began began to emerge, resulting in an explosion
+%of data, with bioinformaticians racing to develop computational tools
+%to analyze and mine it\cite{Ansorge2009}.
 
-In the 1990s, protein and nucleic acid sequences were becoming plentiful
-(distributed on CD-ROM), scientific software packages and spreadsheet programs
-were affordable, several phage and bacterial genomes were sequenced, and the Human Genome Project (HGP) was initiated with Sanger
-sequencing.  In 2003, the pre-genomic era ended with the publication of the human genome\cite{Lander2001,Collins2003,HGP}.  The National Institutes of Health also
-invested heavily in sequencing other organisms to aid in annotation of the 
-human genome.  While complete genome
-sequencing was possible, the sequencing methodology was expensive, laborious and time-consuming,
-spurring scientists to develop the next generation of sequencing technology.
-In the mid-2000s, faster and cheaper
-sequencing techniques began began to emerge, resulting in an explosion
-of data, with bioinformaticians racing to develop computational tools
+At the dawn of computational biology in the 1960s, datasets were small.  
+Protein sequences were first distributed in the printed Dayhoff atlases \cite{Strasser2010} and 
+later on CD-ROM, with bioinformaticians eyeballing entire datasets and shuffling 
+data by hand.  By the 1990s, bioinformaticians were using spreadsheet programs 
+and scientific software packages to analyze increasingly large datasets that 
+included several phage and bacterial genomes.  In 2003, the pre-genomic era ended 
+with the online publication of the human genome\cite{Lander2001,Collins2003,HGP} and 
+the National Institutes of Health invested heavily in sequencing related organisms to 
+aid in annotation.  By the mid-2000s, Sanger sequencing was replaced 
+by faster and cheaper next-generation sequencing technologies, 
+resulting in an explosion of data, with bioinformaticians racing to develop 
+automated and scalable computational tools
 to analyze and mine it\cite{Ansorge2009}.
+
+
 
 \subsection{Computational analysis in the era of next-generation sequencing}
 
@@ -239,16 +257,16 @@ is usually performed on a computer with routinely available data parsing and ana
 sometimes called operating systems or platforms) and the general tools that
 stand ready on the computational benchtop.  
 
-\subsubsection{Unix/Linux operating system}
+\subsubsection{\unix{}/Linux operating system}
 
 % @CTB check Unix -> UNIX...
 
 Most biologists are aware of two primary computing platforms available:
-Windows and UNIX systems (which include Linux and Mac OS X). 
+Windows and \unix{} systems (which include Linux and Mac OS X). 
 In the United States, most people
 learn basic computer skills on Windows machines.  
 However, developers of bioinformatics
-software primarily use UNIX systems because of the large existing ecosystem
+software primarily use \unix{} systems because of the large existing ecosystem
 of tools, most of which are open source -- this means anyone can freely use, modify, and
 redistribute resources under open-source licenses.  The open-source or 
 free-software community has long attracted programmers and other 
@@ -258,7 +276,7 @@ open-source collections of development
 tools, libraries, licenses, and applications for the GNU/Linux system.
 Consequently, biologists can get an operating system and all the bioinformatics
 tools they need for free for all of their computers and clusters.  
-Further, UNIX systems have traditionally been easier to use remotely than Windows
+Further, \unix{} systems have traditionally been easier to use remotely than Windows
 machines,
 the machine is a desktop computer 
 in another room, an institution's high performance compute cluster, or 
@@ -287,31 +305,31 @@ difficult to fund.  As a result of this, biologists need
 basic command line navigation skills to use the latest bioinformatics software.  Biologists
 who use Windows but wish to take advantage of this cache of software and tools
 can download and install a free program such as Cygwin (or MSYS+Mingw32 or 
-Microsoft Interix) to emulate a UNIX system
+Microsoft Interix) to emulate a \unix{} system
 on their Windows machine, or can use PowerShell.
 
 \textsl{Note: modern Macintosh machines are a
 good compromise for modern research labs because they 
-have a UNIX-based system with a friendly GUI for casual use.}
+have a \unix{}-based system with a friendly GUI for casual use.}
 
-\subsubsection{UNIX tools -- the new benchtop tools}
+\subsubsection{\unix{} tools -- the new benchtop tools}
 
 Just as wet-lab biologists use simple tools like pipets, centrifuges,
 incubators, and gel boxes individually and then combine them to perform a
-specific procedure, so bioinformaticians use simple UNIX tools
+specific procedure, so bioinformaticians use simple \unix{} tools
 that each perform a specific task and string them together into a pipeline.
-Many UNIX tools come pre-installed in UNIX systems or are freely
+Many \unix{} tools come pre-installed in \unix{} systems or are freely
 available online. These tools are invaluable for the beginning
 bioinformatician, particularly if that researcher has no programming experience, 
 because they will perform tasks with a speed, customizability, and
 reliability that custom scripts cannot easily match.  Here, we
-introduce some of the most basic, useful UNIX tools for bioinformatics.
+introduce some of the most basic, useful \unix{} tools for bioinformatics.
 
 \paragraph{Shell}
 
 The shell is a language as well as interpreter that reads and interprets commands
 from a user. Any biologist who has opened a terminal or command line interface
-and typed a command has used the shell. There are several types of shells available for UNIX
+and typed a command has used the shell. There are several types of shells available for \unix{}
 system, but bash is predominant. 
 Bioinformaticians often use shell commands to
 run tools and automate tasks such as running pipelines, backing up
@@ -325,7 +343,7 @@ searching for specific data in a group of files, or sifting through a large log
 file and printing only the data relevant to a given project; they write programs to perform 
 more complex tasks.  Detailed below are
 some of the most general and useful tools on
-UNIX systems.
+\unix{} systems.
 
 \paragraph{Grep, Sed, Cut, and Awk}
 
@@ -504,8 +522,8 @@ and analyzing data.  There are many freely available editors with features such
 as graphical interfaces, programming language-specific syntax
 highlighting, and advanced text parsing commands. 
 We recommend that biologists learn cross-platform editors
-(i.e.\ can be used on Windows, UNIX systems, etc.), particularly
-those biologists who use Windows machines locally and UNIX systems
+(i.e.\ can be used on Windows, \unix{} systems, etc.), particularly
+those biologists who use Windows machines locally and \unix{} systems
 remotely.
 
 Two editors are particularly popular among computational scientists: Emacs and vi (or vim).
@@ -888,7 +906,7 @@ sections are sufficient to build a strong foundation for reproducible
 computational research.  Beginners should be ready to investigate the tutorials
 and resources listed at the end of the chapter to build knowledge and
 experience with the command line interface: the new benchtop with open access,
-high-quality UNIX tools for data processing (without programming), simple bash
+high-quality \unix{} tools for data processing (without programming), simple bash
 scripts to generate reproducible procedures and optimize parameters, and text
 editors/IDEs to create and manipulate files across platforms.  Intermediate
 users
@@ -901,7 +919,7 @@ in the development and analysis process.
 
 For most biologists, effectively using already developed software pipelines and writing
 small scripts to port data between them or processing large results files with
-UNIX tools is all they will need to complement their bench work.  By
+\unix{} tools is all they will need to complement their bench work.  By
 incorporating these tools into their computational research and observing the
 computational lab safety practices, biologists can work
 effectively on the new benchtop, produce timely, accurate results that are
@@ -1357,16 +1375,19 @@ a new era of scientific discovery.
 The authors thank Greg Wilson, Steve Haddock, Hans Cheng, Randy Olson, 
 Eric McDonald, Jason Pell, and Cari Hearn for commenting on the manuscript.
 
+
+
 % @ABP are we forgetting anyone?
 
 This chapter is maintained at http://???, where it is 
 being continuously modified and updated by the authors and members 
-of the scientific community.
+of the scientific community.  Readers are encouraged to visit the 
+associated forum and leave questions/comments.
 
 
 \section{Available Resources}
 \subsection{Books}
-\subsubsection{UNIX/Linux tools}
+\subsubsection{\unix{}/Linux tools}
 \begin{itemize}
 \item Haddock \& Dunn \emph{Practical Computing for Biologists}
 \item Newham, Cameron \emph{Learning the bash Shell} [O'Reilly]
@@ -1400,7 +1421,7 @@ science using Python} [Pragmatic Bookshelf]
 \end{itemize}
 
 \subsection{Online resources}
-\subsubsection{UNIX/Linux Tools}
+\subsubsection{\unix{}/Linux Tools}
 \begin{itemize}
 \item GNU Operating System\\\texttt{http://www.gnu.org}
 \item Cygwin (Linux emulator for Windows)\\\texttt{http://www.cygwin.com}
