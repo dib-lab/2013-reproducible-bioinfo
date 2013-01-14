@@ -2,6 +2,12 @@
 \usepackage{url}
 %size
 
+% @CTB put acknowledgements at end
+% @CTB check haddock foo
+% @CTB Alexis, do you want to be last author?
+% @CTB use latexdiff
+% @CTB mention online fora??
+
 \begin{document}
 
 \title{Dummy title} \author{Dummy author} \chapter*{Dummy chapter needed for
@@ -26,104 +32,104 @@ Microbiology \& Molecular Genetics, Michigan State University, East Lansing, MI}
 
 The birth of computational biology in the 1960s
 and 1970s brought key bioinformatic discoveries, but many analyses
-were conducted by eyeballing entire datasets and shuffling data by hand.
+were conducted by examining entire datasets by eye and shuffling data by hand.
 Protein sequences and alignments were distributed in the annual printed Dayhoff
 atlases \cite{Strasser2010} that budding bioinformaticians 
-would type by hand onto punch cards.  In the 1980s,
-improved technology and discoveries in computer science enabled greater
-capabilities in biology both in software and hardware.  The term bioinformatics
-was coined for the first time and the first major sequence databases were
-established. 
+would manually type onto punch cards.  In the 1980s,
+the term ``bioinformatics'' was coined and the first major sequence databases
+were established, necessitating more automated and scalable computational analyses.
 
 In the 1990s, protein and nucleic acid sequences were becoming plentiful
 (distributed on CD-ROM), scientific software packages and spreadsheet programs
-were affordable, and the Human Genome Project (HGP) was initiated using Sanger
-sequencing.  In 2003, the pre-genomic era ended with the thirteen year HGP
-finished and the data deposited online for free 
-use\cite{Lander2001,Collins2003,HGP}.  The National Institutes of Health also
-invested in sequencing other organisms to aid in annotation of the 
+were affordable, several phage and bacterial genomes were sequenced, and the Human Genome Project (HGP) was initiated with Sanger
+sequencing.  In 2003, the pre-genomic era ended with the publication of the human genome\cite{Lander2001,Collins2003,HGP}.  The National Institutes of Health also
+invested heavily in sequencing other organisms to aid in annotation of the 
 human genome.  While complete genome
-sequencing was a reality, the methodology was laborious and time-consuming,
-spurring scientists to develop the next generation of sequencing technology,
-which culminated in mid-2000s with faster, cheaper, and more accurate
-sequencing\cite{Ansorge2009}. This technology has resulted in an explosion of biological data
-with bioinformaticians racing to develop computational tools to mine it.  
+sequencing was possible, the sequencing methodology was expensive, laborious and time-consuming,
+spurring scientists to develop the next generation of sequencing technology.
+In the mid-2000s, faster and cheaper
+sequencing techniques began began to emerge, resulting in an explosion
+of data, with bioinformaticians racing to develop computational tools
+to analyze and mine it\cite{Ansorge2009}.
 
-\subsection{Computational analysis in next-generation sequencing era}
+\subsection{Computational analysis in the era of next-generation sequencing}
 
-With next-generation sequencing rapidly becoming an affordable tool
-for research groups around the globe, the grand datasets that were the
+As sequencing becomes ever more affordable,
+the grand genomic and transcriptomic datasets that were the
 dream of many pre-genomic era biologists have become commonplace.  A single
 experiment in a small research lab can inform on
-thousands of genes, and small genomes can be sequenced in a few hours.
-Mind-bogglingly huge datasets gathered by initiatives such as ENCODE\cite{Encode2004,Myers2011}, 
+thousands of genes or entire genomes, and small genomes can be sequenced and assembled in a few hours.
+Initiatives such as ENCODE\cite{Encode2004,Myers2011}, 
 1000 Genomes Project\cite{Altshuler2010}, 
 Cancer Genome Project\cite{Cosmic2011}, Human Microbiome Project\cite{Lewis2012}, 
 Eukaryotic Pathogen and Disease Vector Sequencing Project\cite{EPDVSP}, 
 Clinical Sequencing Exploratory Research\cite{CSER}, 
 Centers for Mendelian Genomics\cite{CMG}, Environmental Genome Project\cite{EGP}, 
-and HapMap Project\cite{IHP} are hosted on
-massive compute platforms
-(some of which include XSEDE\cite{Xsede} and Amazon EC2\cite{AEC2}), available for large groups of 
-researchers to mine.  As the field comes closer to achieving the 
+and HapMap Project\cite{IHP} make vast amounts of data readily available for
+download and analysis.
+As the field comes closer to achieving the 
 \$1000 genome\cite{Mardis2006}, waves of individual genomes will inundate the 
 public databases, providing a rich information source for
-researchers to analyze with a dazzling array of statistical tools.  Further,
+researchers to analyze with a wide array of tools.  Further,
 proteomics, metabolomics, medical imaging, environmental conditions, and many
-other kinds of data are not only available for cross-validation, but as
-scientists continue to push the edge of data analysis, the combination of
-different data types into sophisticated analyses is required.  The field has
+other kinds of data are becoming readily available for integration.  As
+scientists continue to push the edge of data analysis and integration, the integration of these
+different data types is increasingly required.  The field has
 advanced far from the eye/hand methods of the pre-genomic era and outstripped
 the spreadsheets and single software packages of the early post-genomic era.  
 Modern computational analyses are a major part of biological studies \cite{Zhulin2009}
-and require passing gigabytes of data through sophisticated computational
-pipelines, which typically involve several distinct programs with custom
-scripts porting data between them, running from the quality control of raw data
-(or alternatively of downloading primary data from public online databases)
-through many steps of calculation, validation, statistics, and ending with
-creation of graphical representations to aid end-users in comprehending the
+and require analyzing gigabytes or terabytes of data in complex computational
+pipelines, which typically involve running several distinct programs with custom
+scripts porting data between them.  These pipelines start from quality control on raw data (or by downloading primary data from public databases) and pass the data through many steps of calculation, validation, statistics.  They end with
+summarization and graphical vizualization to aid end-users in comprehending the
 complex results.
 
-Genomics has shifted the driver of science from hypothesis (devise a question 
-and design/conduct experiments) to discovery (sift through large datasets 
-to find something useful).  With this greater emphasis on performing 
-statistical analyses of large datasets and simulating models, wet-lab biologists are
+Genomics has expanded the drivers of science from hypothesis (devise a question 
+and design/conduct experiments in response) to include discovery (sifting through large datasets in search of patterns).  With this greater emphasis on 
+on statistical analyses of large datasets and data-driven modeling, even wet-lab biologists are
 increasingly finding themselves at the computer instead of the bench\cite{Merali2010}.  
 However, many biologists lack a strong background in mathematics or
 computer science\cite{Bialek2004,Pevzner2009}, 
 and struggle to transition from a graphical
-computer desktop environment to the command line interface on a 
-supercomputer or use graphical programming to create remote 
-multicomponent pipelines.  Further, while they
-usually have intensive training using good safety practices 
-for wet-lab experiments, they have minimal experience with computational 
-lab safety practices and therefore lack the knowledge necessary to 
+computer desktop environment to the command line interface required for
+many analyses.  Further, while they
+usually have been trained in good wet-lab practice,
+they often have minimal experience with computational 
+practice and lack the knowledge necessary to 
 efficiently perform high-quality reproducible 
 computational research\cite{Merali2010,Segal2007}.
 
 \subsection{Concerns in Bioinformatic research}
 
-This lack of computational experience is a significant hindrance to further
-scientific research.  While the obvious choice is
-to have trained bioinformaticians and computer scientists handle the
-computational aspect of biology, this is currently impossible for two reasons:
+% @CTB what about moving this entire section (down through ``Guidelines for
+% getting started) up front, and putting the current introduction in as
+% ``background''?
+
+Biologists' lack of computational experience is a significant hindrance as
+biology expands to include data- and model-driven methodologies.
+While the obvious solution is to limit the computational aspect of
+biology to trained bioinformaticians and computer scientists,
+this is impractical for two reasons:
 not enough skilled bioinformaticians are available (only a minuscule percentage
-of US universities have bioinformatics undergraduate programs) and many
+of US universities have bioinformatics undergraduate programs), and many
 computer scientists are uninterested/uneducated in science or unwilling to pursue careers
-that pay considerably less than a commercial position.  
-As a result, many
-wet-lab biologists have stepped forth to learn enough 
-computational skills to analyze their own data\cite{Heaton2012,Kelly2008}.  
+that pay considerably less than a commercial position.  Moreover, the
+% @CTB citation for pay/disinterest?
+substantial background in biology required to make appropriate use of
+data blocks computer scientists from quickly moving into bioinformatics.
+As a result,
+wet-lab biologists have begun to venture into computation in increasing
+numbers\cite{Heaton2012,Kelly2008}.
 They are usually long on data and short on time, so they
 focus on learning the computational tools needed to analyze their specific
 data, concentrating on rapidly processing data with the tools 
 as opposed to understanding the tools' underlying
-assumptions.  Further, there is a cultural gap
-because many labs/programs do not consider bioinformatics training 
-essential for their biologists\cite{Segal2007}.  A young researcher seeking to analyze large datasets 
+assumptions.  Even more troubling, there is a cultural and social gap
+because many labs and programs do not consider bioinformatics
+essential for their biologists\cite{Segal2007}.  A researcher seeking to analyze large datasets 
 when few or none of his/her coworkers or superiors have
-computational expertise may have no clue where to begin, be given very little
-time to find or program appropriate tools, and therefore develops an ad-hoc
+computational expertise may have no clue where to begin, and be given very little
+time to find or develop appropriate tools.  This situation fosters an ad hoc
 approach to bioinformatics.    
 
 The effects of this lack of expertise can be dire:  
@@ -140,17 +146,16 @@ hundreds of hours of compute and bench time, and
 potentially requiring retraction of papers when the errors are caught\cite{Merali2010}.  
 
 \item Many tools only run on the command line, are difficult to install, lack
-documentation, etc., and therefore some biologists may
-select software based not on accuracy and scientific relevance, but simply on
-ease of use.  
+documentation, etc., and therefore software may be selected based on ease
+of use, rather than accuracy and scientific relevance
 
 \item With the trial and error
-approach used to create custom pipelines, some biologists can
+approach used to create custom pipelines, biologists can
 lose track of which tools they ran, the order in which they ran them, and the
 parameter sets used for each.  Many biologists have not carried 
-the standard scientific practice of recording
-painstakingly detailed procedures in laboratory notebooks for wet-lab
-experiments over into computational research.
+the standard scientific practice of painstakingly recording
+wet-lab procedures in laboratory notebooks
+over into their computational research.
 
 \item Many biologists use software with the default parameters.  
 The defaults are frequently selected by the original
@@ -175,13 +180,13 @@ inaccuracies are being hidden.
 \end{enumerate}
 
 The good news is that
-all of these problems can be solved using tools 
+all of these problems can be addressed using tools 
 and practices that are already available.  
 
 \subsection{Reproducible research is attainable in Bioinformatics using modern tools}
 
-Many tools available to rectify the reproducible computational research problems 
-in biology are already being used in Computer Science, Physics, and
+Many tools for reproducible computational research exist and are
+already being used in Computer Science, Physics, and
 Engineering.  These
 tools are routinely used to quality control the data analysis process,
 facilitate useful collaborations, and maintain laboriously developed programs
@@ -194,20 +199,22 @@ errors are consistently detected and corrected early instead of being
 discovered only after time-consuming downstream analyses and attempted wet-lab
 verification (or after a paper has been submitted or published\cite{Miller2006}).  The more
 computational methods employed by a laboratory, the more essential the tools
-are.  Further, while 
+are to efficiency, correctness, and reproducibility.  Further, while 
 use of these tools is currently optional in biology\cite{Ince2012}, researchers can 
 expect that within a decade, most journals and granting agencies will 
-require all computational tools and procedures to be made freely accessible online.
+require the appropriate use of tools and methods in computational biology
+research; the National Science Foundation already requires detailed
+discussion of data management.
 
 \subsection{Guidelines for getting started} Our goal is to help those biologists who
 have zero or little background in computation to
-get started. The following sections are structured to provide
+get started with good practices and tools for computational science. The following sections are structured to provide
 introductory knowledge for those biologists venturing into bioinformatics and the
-command line interface for the first time, intermediate knowledge for those
-biologists ready to start programming, advanced techniques for seasoned
-programmers for improving programs and automating pipelines, and a related tools
-section that names those tools and concepts that readers can seek out once they
-have established a strong computational foundation for reproducible research.
+command line interface for the first time; intermediate knowledge for those
+biologists ready to start programming; and advanced techniques for seasoned
+programmers for improving programs and automating pipelines; and a related tools
+section that names tools and concepts that readers can seek out once they
+have established a basic foundation for reproducible research.
 
 \textsl{Note: the following sections give overviews and simple examples of the tools, 
 but readers are encouraged to use the resources listed at the end of
@@ -224,46 +231,45 @@ on the command line and selecting a text editor.
 
 \subsection{Computing environment -- the new benchtop}
 
-Just as much wet-lab biology work is done on a lab bench with routine tools
-such as micropipets, shakers, and spectroscopes available, computational work
-is usually performed on a computer with routine data parsing and analysis tools
-installed.  In this section, we will discuss computing environments (also
+Just as much wet-lab biology work is done on a lab bench with routinely available tools
+such as micropipets, shakers, and spectroscopes, computational work
+is usually performed on a computer with routinely available data parsing and analysis tools.  In this section, we will discuss computing environments (also
 sometimes called operating systems or platforms) and the general tools that
 stand ready on the computational benchtop.  
 
 \subsubsection{Unix/Linux operating system}
 
-Most biologists are aware of the two primary computing platforms available:
-Windows and Unix systems (which include Linux and Mac OSX). 
+% @CTB check Unix -> UNIX...
+
+Most biologists are aware of two primary computing platforms available:
+Windows and UNIX systems (which include Linux and Mac OS X). 
 In the United States, most people
 learn basic computer skills on Windows machines.  
 However, developers of bioinformatics
-software primarily Unix systems because the Unix
-systems are open-source, which means anyone can freely use, modify, and
+software primarily use UNIX systems because of the large existing ecosystem
+of tools, most of which are open source -- this means anyone can freely use, modify, and
 redistribute resources under open-source licenses.  The open-source or 
 free-software community has long attracted programmers and other 
-technically-oriented people who use practical skills  
-to creatively solve problems, frequently resulting in solutions that 
-are more cutting-edge than  
-those supported by commercial industry.    
+technically-oriented people who creatively solve problems.
 The Free Software Foundation\cite{FSF} has numerous 
 open-source collections of development
 tools, libraries, licenses, and applications for the GNU/Linux system.
 Consequently, biologists can get an operating system and all the bioinformatics
-tools they need for free for all of their computers/clusters.  
-Further, Unix systems are commonly used when 
-running on remote machines, whether the machine is a desktop computer 
+tools they need for free for all of their computers and clusters.  
+Further, UNIX systems have traditionally been easier to use remotely than Windows
+machines,
+the machine is a desktop computer 
 in another room, an institution's high performance compute cluster, or 
-the Cloud.
+the cloud.
 
 Making the switch from graphical user interface (GUI) based software 
-to command line is useful because
-the power available at the command line outstrips that
+to command line software is useful because
+the power to remix and combine tools at the command line outstrips that
 of most GUI-based software; as an analogy, GUI-based software is similar to a lab
 that relies exclusively on commercial kits whereas the command line 
-is like a lab that is equipped with chemicals and instruments that can be used 
+is like a lab that is also equipped with chemicals and instruments that can be used 
 to supplement the kits or develop novel techniques.  Also, many
-GUI-based software packages require users to manually click through an analysis
+GUI-based software packages require users to manually click through an analysis,
 while the command line can be used to write complete instructions for an
 analysis and run many datasets simultaneously.   Automation ensures 
 that each dataset is run according to the
@@ -275,48 +281,49 @@ the command line (such as Taverna, Pipeline Pilot, and Galaxy).
 Further, most
 cutting-edge bioinformatics tools lack a GUI,
 partly because building GUIs is a time-consuming task that is
-difficult to fund; biologists need
-basic command line navigation skills to use the latest software.  Biologists
+difficult to fund.  As a result of this, biologists need
+basic command line navigation skills to use the latest bioinformatics software.  Biologists
 who use Windows but wish to take advantage of this cache of software and tools
 can download and install a free program such as Cygwin (or MSYS+Mingw32 or 
-Microsoft Interix) to emulate a Unix system
-on their Windows machine or can use PowerShell. 
+Microsoft Interix) to emulate a UNIX system
+on their Windows machine, or can use PowerShell.
 
 \textsl{Note: modern Macintosh machines are a
 good compromise for modern research labs because they 
-have a Unix-based system with a friendly GUI for casual use.}
+have a UNIX-based system with a friendly GUI for casual use.}
 
-\subsubsection{Unix tools -- the new benchtop tools}
+\subsubsection{UNIX tools -- the new benchtop tools}
 
-Just as wet-lab biologists learn to use simple tools like pipets, centrifuges,
-incubators, and gel boxes individually and then put them together to perform a
-specific procedure, so bioinformaticians use simple Unix tools
+Just as wet-lab biologists use simple tools like pipets, centrifuges,
+incubators, and gel boxes individually and then combine them to perform a
+specific procedure, so bioinformaticians use simple UNIX tools
 that each perform a specific task and string them together into a pipeline.
-Many Unix tools come pre-installed in Unix systems or are freely
+Many UNIX tools come pre-installed in UNIX systems or are freely
 available online. These tools are invaluable for the beginning
 bioinformatician, particularly if that researcher has no programming experience, 
-because they will perform tasks with speed, options, and
-reliability that most quickly-written custom scripts cannot match.  Here, we
-introduce some of the most basic, useful Unix tools for bioinformatics.
+because they will perform tasks with a speed, customizability, and
+reliability that custom scripts cannot easily match.  Here, we
+introduce some of the most basic, useful UNIX tools for bioinformatics.
 
 \paragraph{Shell}
 
-Shell is a language as well as interpreter that reads and interprets commands
+The shell is a language as well as interpreter that reads and interprets commands
 from a user. Any biologist who has opened a terminal or command line interface
-and typed a command has used shell. There are several shells available for Unix
-system, but Bourne-again Shell (Bash) is predominant. 
+and typed a command has used the shell. There are several types of shells available for UNIX
+system, but bash is predominant. 
 Bioinformaticians often use shell commands to
-run tools and automate tasks such as backing up
+run tools and automate tasks such as running pipelines, backing up
 data and submitting jobs on a computer cluster. While shell languages can be
 used to develop full-fledged programs, this can be time-consuming 
-because shell is nonintuitive.  
+because the shell is designed around operating system tasks rather than
+data analysis.
 Bioinformaticians usually use shell commands to perform routine tasks such as
-sorting large datasets (files too big to open in spreadsheet programs),
+sorting large datasets,
 searching for specific data in a group of files, or sifting through a large log
 file and printing only the data relevant to a given project; they write programs to perform 
 more complex tasks.  Detailed below are
 some of the most general and useful tools on
-Unix systems.
+UNIX systems.
 
 \paragraph{Grep, Sed, Cut, and Awk}
 
@@ -338,6 +345,7 @@ syntax (covered in the Related section), which offers more robust pattern search
 
 \paragraph{Apropos and Man}
 
+% @CTB why the space at the beginning of the next line?
 \ \emph{apropos}
 is a program that
 displays a list of programs related to a keyword. It is
@@ -346,6 +354,7 @@ knowing the program's name. For example, if a biologist wanted to archive files,
 he/she might use the \emph{apropos} command to search for an appropriate tool:\\* \\*
 \texttt{\$ apropos archive}\\*
 
+\noindent
 \textsl{Note: \$ indicates the command prompt or where the user would begin typing.
 The user would not actually type the \$.}
 
@@ -357,11 +366,13 @@ contents of archive libraries}\\*
 \texttt{unzip(1)    - list, test and extract compressed files in a
 ZIP archive\ldots}\\*
 
+\noindent
 To learn more about each program, 
 the biologist can look at the standard manual for each program using a
 \emph{man} command (\emph{man} is short for manual).\\* \\*
 \texttt{\$ man tar}\\*
 
+\noindent
 In this case, a man command will display a standard manual page, which
 typically includes the name of the program, synopsis, detailed description, and
 options as well as some examples. Here is an example of the first few lines of
@@ -380,6 +391,7 @@ the standard manual for the tar program.\\* \\*
 implementation can extract from tar, pax, cpio, zip, jar, ar, and ISO 9660
 cdrom images and can create tar, pax, cpio, ar, and shar archives\ldots}\\*
 
+\noindent
 \textsl{Note: Apropos and man commands serve as a reference, not a tutorial on how to use
 a particular command. Biologists may need to search in Google,
 Wikipedia, and other resources (such as \texttt{software-carpentry.org}) 
@@ -414,8 +426,8 @@ Example of shell commands to be written/typed in a bound or electronic notebook:
 \texttt{bowtie-build DataSet001.fa DataSet001.Index}\\*
 \texttt{bowtie -m 1 DataSet001.Index DataSet001Reads.fq DataSet001.map }\\*
 
-In the example, the biologist is using software that aligns short RNA-Seq reads
-to a reference transcriptome.  To use the software, two commands are required:
+In the example, the biologist is using software that aligns short reads
+to a reference sequence database.  To use the software, two commands are required:
 (1) call the program bowtie-build to read the reference file
 \emph{DataSet001.fa} and
 return the output files with the prefix \emph{DataSet001.Index},
@@ -436,6 +448,7 @@ experiments, so can the shell script be painstakingly written and then simply
 used and referred to in later analyses.  
 
 
+% @CTB what are these ` things? They show up incorrectly in the text, right?
 Example bash script \emph{alignMyRnaSeqData.sh}\\* \\*
 \texttt{\#! /bin/bash}\\*
 \texttt{dataName=`DataSet001'}\\*
@@ -487,19 +500,20 @@ create/modify, and save text files and source code, but different because they
 do not save formatting characters or binary information in the file.
 Therefore, they produce the clean, simple files that are needed for running programs
 and analyzing data.  There are many freely available editors with features such
-as GUIs, programming language-specific syntax
+as graphical interfaces, programming language-specific syntax
 highlighting, and advanced text parsing commands. 
 We recommend that biologists learn cross-platform editors
-(i.e.\ can be used on Windows, Unix systems, etc.), particularly
-those biologists who use Windows machines locally and Unix systems
+(i.e.\ can be used on Windows, UNIX systems, etc.), particularly
+those biologists who use Windows machines locally and UNIX systems
 remotely.
 
-Two editors are particularly popular among scientists: Emacs and Vi (or Vim).
+% @CTB hmm, should Vi be capitalized?
+Two editors are particularly popular among computational scientists: Emacs and Vi (or Vim).
 Both editors are cross-platform and have features that can increase productivity
 such as macros that can automate tasks, regular expressions to 
 tailor/speed search and replace, etc.
 Emacs and Vi can also be modified/customized using 
-a scripting language such as Emacs Lisp or Vim script.
+their internal scripting languages.
 This feature makes these two editors highly expandable and flexible.
 Numerous free plugins for both editors are developed and maintained by a
 large user-based community, which also provides free support for new users.
@@ -512,7 +526,7 @@ C++, Python, and Ruby, as well as HTML, PHP, and JavaScript for web
 development. IDEs also provide a nice GUI, which is built on
 top of command-line tools.  Moreover, 
 online tutorials are freely available for users of all levels.  For biologists who 
-intend to progress to programming their own tools, IDEs are a convenient step 
+intend to invest heavily in programming their own tools, IDEs may be a convenient step 
 up from text editors.
 
 \section{Intermediate} This section addresses programming, the keystone of
@@ -855,7 +869,7 @@ sections are sufficient to build a strong foundation for reproducible
 computational research.  Beginners will be ready to investigate the tutorials
 and resources listed at the end of the chapter to build knowledge and
 experience with the command line interface: the new benchtop with open access,
-high-quality Unix tools for data processing (without programming), simple bash
+high-quality UNIX tools for data processing (without programming), simple bash
 scripts to generate reproducible procedures and optimize parameters, and text
 editors/IDEs to create and manipulate files across platforms.  Intermediates
 will be able to investigate various programming languages to find the one with
@@ -867,7 +881,7 @@ in the development and analysis process.
 
 For most biologists, effectively using already developed software pipelines and writing
 small scripts to port data between them or processing large results files with
-Unix tools is all they will need to complement their bench work.  By
+UNIX tools is all they will need to complement their bench work.  By
 incorporating these tools into their computational research and observing the
 computational lab safety practices, biologists can work
 effectively on the new benchtop, produce timely, accurate results that are
@@ -1318,7 +1332,7 @@ a new era of scientific discovery.
 
 \section{Available Resources}
 \subsection{Books}
-\subsubsection{Unix/Linux tools}
+\subsubsection{UNIX/Linux tools}
 \begin{itemize}
 \item Haddock \& Dunn \emph{Practical Computing for Biologists}
 \item Newham, Cameron \emph{Learning the bash Shell} [O'Reilly]
@@ -1352,7 +1366,7 @@ science using Python} [Pragmatic Bookshelf]
 \end{itemize}
 
 \subsection{Online resources}
-\subsubsection{Unix/Linux Tools}
+\subsubsection{UNIX/Linux Tools}
 \begin{itemize}
 \item GNU Operating System\\\texttt{http://www.gnu.org}
 \item Cygwin (Linux emulator for Windows)\\\texttt{http://www.cygwin.com}
