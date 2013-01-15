@@ -2,14 +2,6 @@
 \usepackage{url}
 %size
 
-% @CTB check haddock foo
-% @CTB Alexis, do you want to be last author?
-% @CTB mention online fora??
-% @CTB do we reference SWC arxiv paper?
-% @CTB I feel like we maybe need to mention R in the languages more...
-% @CTB and RStudio in the IPython Notebook section, sigh
-% @CTB mention online forum for THIS paper.
-
 \newcommand{\unix}{UNIX}
 
 \begin{document}
@@ -127,10 +119,6 @@ modern biological studies.
 
 \subsection{Concerns in Bioinformatic research}
 
-% @CTB what about moving this entire section (down through ``Guidelines for
-% getting started) up front, and putting the current introduction in as
-% ``background''?
-
 Biologists' lack of computational experience is a significant hindrance as
 biology expands to include data- and model-driven methodologies.
 While the obvious solution is to limit the computational aspect of
@@ -223,7 +211,7 @@ errors are consistently detected and corrected early instead of being
 discovered only after time-consuming downstream analyses and attempted wet-lab
 verification (or after a paper has been submitted or published\cite{Miller2006}).  The more
 computational methods employed by a laboratory, the more essential the tools
-are to efficiency, correctness, and reproducibility.  Further, while 
+are to efficiency, correctness, and reproducibility \cite{bestpractices}.  Further, while 
 use of these tools is currently optional in biology\cite{Ince2012}, researchers can 
 expect that within a decade, most journals and granting agencies will 
 require the appropriate use of tools and methods in computational biology
@@ -263,8 +251,6 @@ sometimes called operating systems or platforms) and the general tools that
 stand ready on the computational benchtop.  
 
 \subsubsection{\unix{}/Linux operating system}
-
-% @CTB check Unix -> UNIX...
 
 Most biologists are aware of two primary computing platforms available:
 Windows and \unix{} systems (which include Linux and Mac OS X). 
@@ -883,7 +869,6 @@ not match. The doctest for the previous function would look like this:\\*\\*
 
 \end{itemize}
 
-% @CTB should we separate with some kind of ``discussion'' or ``testing'' headline?
 \subsubsection{Code testing in real life} 
 
 Effective testing catches errors. However, the human programmer can almost
@@ -901,8 +886,8 @@ because it is time-consuming and not considered a critical path activity\cite{Se
 Rigorous tests may contain more lines of code than the actual code. 
 However, there is some evidence that
 programmers who write tests 
-spend less time debugging and produce higher quality code.
-% @CTB cite ... crumb, who is it... one of the Wilson anthologies... @@CTB
+spend less time debugging and produce higher quality code
+(see Chapter 12 of \cite{MakingSoftware}).
 Moreover, time spent repeating an analysis because of a bug is usually far
 costlier than time spent writing tests.
 
@@ -1021,9 +1006,6 @@ of the program.  In the modular example, the bug is fixed once in the module.
 Similarly, the module need only be
 tested once whereas good testing of a linear program would require many more
 tests.
-
-% @CTB not a big fan of ``linear'', but not sure how to convey otherwise. I'll
-% think on't.
 
 \item Modules are
 easier to reuse for other projects.  Once a programmer has written and tested a
@@ -1204,6 +1186,8 @@ perform common tasks elegantly, accurately, and expeditiously.
 IPython also allows users to
 create their own plugins to extend its functionality.
 
+\textsl{Note: Similar ``notebook''-like tools exist for R, as well.}
+
 \paragraph{Real World Example}
 
 The senior author (C. Titus Brown, MSU) used the IPython notebook 
@@ -1227,6 +1211,23 @@ to produce publishable results in record time \cite{RaganKelley2012}.
 For biologists/bioinformaticians who have progressed through the Beginner
 to Advanced sections, we briefly describe more advanced computing topics 
 that can facilitate accurate, efficient computational research.
+
+\subsection{Using online resources}
+
+A wide range of topics relevant to programming, bioinformatics, and
+data analysis are discussed online in blogs, Web forums, and Twitter.
+Perhaps the single most useful approach to problem solving available
+is to do an online search for your problem; if it is a problem or bug
+that has been encountered in a popular piece of software, a solution will
+almost certainly have been posted.
+
+Two particularly useful Web forums for bioinformatics are BioStars and
+Seqanswers.  We strongly suggest that novice bioinformaticians
+search these forums for discussions of tools.  Both of these forums
+also support asking questions, and the online bioinformatics community
+is generally very friendly and willing to help; we encourage you to
+first search to see if someone has already asked your question, and if
+not, to then post the question on one or both of these forums.
 
 \subsection{Advanced tools}
 
@@ -1381,16 +1382,14 @@ a new era of scientific discovery.
 \section{Acknowledgments}
 
 The authors thank Greg Wilson, Steve Haddock, Hans Cheng, Randy Olson, 
-Eric McDonald, Jason Pell, and Cari Hearn for commenting on the manuscript.
+Eric McDonald, Jason Pell, and Cari Hearn for reviewing early drafts of
+this manuscript.
 
-
-
-% @ABP are we forgetting anyone?
-
-This chapter is maintained at http://???, where it is 
-being continuously modified and updated by the authors and members 
-of the scientific community.  Readers are encouraged to visit the 
-associated forum and leave questions/comments.
+This chapter is maintained online at
+http://reproducibility.idyll.org/, where it is being continuously
+modified and updated by the authors and members of the scientific
+community.  Readers are encouraged to visit the associated forum and
+leave questions/comments.
 
 
 \section{Available Resources}
@@ -1468,6 +1467,7 @@ science using Python} [Pragmatic Bookshelf]
 \subsubsection{Web Forums}
 \begin{itemize}
 \item BioStars: Bioinformatics answers \\\texttt{http://www.biostars.org/}
+\item Seqanswers: Bioinformatics answers \\\texttt{http://seqanswers.com}
 \item Stack Overflow: General programming\\ \texttt{http://stackoverflow.com/}
 \end{itemize}
 
