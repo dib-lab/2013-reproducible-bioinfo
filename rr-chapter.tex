@@ -95,7 +95,7 @@ pipelines, which typically involve running several distinct programs with custom
 scripts porting data between them.  These pipelines start from quality control of 
 raw data (or by downloading primary data from public databases) and pass the data 
 through many steps of calculation, validation, and statistics.  They end with
-summarization and graphical vizualization to aid end-users in comprehending the
+summarization and graphical visualization to aid end-users in comprehending the
 complex results.  In short, modern biological studies require 
 datasets that are so large, scientists must use advanced computational tools to 
 perform useful analyses.
@@ -232,7 +232,7 @@ have established a basic foundation for reproducible research.
 but readers are encouraged to use the resources listed at the end of
 the chapter to find specific information and step-by-step tutorials.  Essentially, 
 this chapter tells readers about existing tools and why they are important to use, 
-but is not itself a course in computational research.}
+but is not itself a course in computational research.  If readers are interested in more hands-on experience with some of these topics, the Software Carpentry project (http://software-carpentry.org) offers free online videos as well as 2-day workshops in these and related areas.}
 
 \section{Beginner} Here we discuss simple practices that beginners can use
 to establish a strong foundation for making their computational research
@@ -1241,13 +1241,13 @@ that ends with \emph{logy}, matching biology, physiology, technology, etc.
 In programming, regular expressions are
 used to concisely and quickly search for patterns in data.
 
-\subsubsection{Debugger}
+\subsubsection{Debuggers}
 
 Code frequently contains errors or bugs that cause unexpected results.
 While syntax errors will be caught by the interpreter or compiler, 
-logic errors will go undetected.
-The debugger tool allows programmers to interact with their program such as
-running, pausing, stepping in and out of functions or loops, and changing values
+logic errors often go undetected.
+A debugger allows programmers to interact with their program by
+running and pausing execution, stepping in and out of functions or loops, and changing values
 in variables during execution to locate a bug.
 Most programming languages have at least one debugger.
 GDB is a standard GNU/Linux debugger that can be used with most
@@ -1258,7 +1258,7 @@ with GUIs.
 \subsubsection{Unit tests and automated testing}
 
 Unit testing consists of writing
-code that tests individual units of a program. 
+code that tests individual units of a program, such as functions or modules.
 Each subunit is tested in isolation; therefore, tests 
 on a given subunit will not be affected by bugs from other subunits. This
 procedure helps locate errors in a large program. 
